@@ -1,859 +1,867 @@
 {
-  "api_version":"3.0",
-  "metadata":{
-    "creation_time":"1557238649804388",
-    "kind":"blueprint",
-    "last_update_time":"1559740798780988",
-    "name":"JBoss",
-    "spec_version":19
-  },
-  "spec":{
-    "description":"JBoss v16.0.0",
-    "name":"JBoss",
-    "resources":{
-      "app_profile_list":[
-        {
-          "action_list":[
-
-          ],
-          "deployment_create_list":[
+   "api_version":"3.0",
+   "metadata":{
+      "creation_time":"1557238649804388",
+      "kind":"blueprint",
+      "last_update_time":"1560411942322060",
+      "name":"JBoss",
+      "spec_version":20
+   },
+   "spec":{
+      "description":"JBoss v16.0.0",
+      "name":"JBoss",
+      "resources":{
+         "app_profile_list":[
             {
-              "action_list":[
+               "action_list":[
 
-              ],
-              "depends_on_list":[
+               ],
+               "deployment_create_list":[
+                  {
+                     "action_list":[
 
-              ],
-              "description":"",
-              "max_replicas":"1",
-              "min_replicas":"1",
-              "name":"6e337ae8_deployment",
-              "package_local_reference_list":[
-                {
-                  "kind":"app_package",
-                  "name":"Package1"
-                }
-              ],
-              "published_service_local_reference_list":[
+                     ],
+                     "depends_on_list":[
 
-              ],
-              "substrate_local_reference":{
-                "kind":"app_substrate",
-                "name":"VM_JBOSS"
-              },
-              "type":"GREENFIELD",
-              "variable_list":[
+                     ],
+                     "description":"",
+                     "max_replicas":"1",
+                     "min_replicas":"1",
+                     "name":"6e337ae8_deployment",
+                     "package_local_reference_list":[
+                        {
+                           "kind":"app_package",
+                           "name":"Package1"
+                        }
+                     ],
+                     "published_service_local_reference_list":[
 
-              ]
-            }
-          ],
-          "description":"",
-          "name":"Default",
-          "variable_list":[
-            {
-              "attrs":{
-                "is_secret_modified":false,
-                "secret_reference":{
+                     ],
+                     "substrate_local_reference":{
+                        "kind":"app_substrate",
+                        "name":"VM_JBOSS"
+                     },
+                     "type":"GREENFIELD",
+                     "variable_list":[
 
-                },
-                "type":""
-              },
-              "description":"",
-              "editables":{
-                "value":true
-              },
-              "label":"",
-              "name":"AUTHORIZED_KEY",
-              "type":"SECRET",
-              "val_type":"STRING",
-              "value":""
-            },
-            {
-              "attrs":{
-                "is_secret_modified":false,
-                "secret_reference":{
+                     ]
+                  }
+               ],
+               "description":"",
+               "name":"Default",
+               "variable_list":[
+                  {
+                     "attrs":{
+                        "is_secret_modified":false,
+                        "secret_reference":{
 
-                },
-                "type":""
-              },
-              "description":"",
-              "label":"",
-              "name":"INSTANCE_PUBLIC_KEY",
-              "type":"SECRET",
-              "val_type":"STRING",
-              "value":""
-            },
-            {
-              "attrs":{
-                "type":""
-              },
-              "description":"",
-              "editables":{
-                "value":true
-              },
-              "label":"",
-              "name":"JBOSS_USER",
-              "type":"LOCAL",
-              "val_type":"STRING",
-              "value":""
-            },
-            {
-              "attrs":{
-                "is_secret_modified":false,
-                "secret_reference":{
-
-                },
-                "type":""
-              },
-              "description":"",
-              "editables":{
-                "value":true
-              },
-              "label":"",
-              "name":"JBOSS_USER_PASSWORD",
-              "type":"SECRET",
-              "val_type":"STRING",
-              "value":""
-            },
-            {
-              "attrs":{
-                "type":""
-              },
-              "description":"",
-              "editables":{
-                "value":true
-              },
-              "label":"",
-              "name":"JBOSS_VERSION",
-              "type":"LOCAL",
-              "val_type":"STRING",
-              "value":""
-            }
-          ]
-        }
-      ],
-      "client_attrs":{
-        "6e337ae8_deployment":{
-          "x":560.4859719515,
-          "y":361.5503327348
-        }
-      },
-      "credential_definition_list":[
-        {
-          "description":"",
-          "name":"centos",
-          "secret":{
-            "attrs":{
-              "is_secret_modified":false,
-              "secret_reference":{
-
-              }
-            }
-          },
-          "type":"KEY",
-          "username":"centos"
-        }
-      ],
-      "default_credential_local_reference":{
-        "kind":"app_credential",
-        "name":"centos"
-      },
-      "package_definition_list":[
-        {
-          "action_list":[
-
-          ],
-          "description":"",
-          "name":"Package1",
-          "options":{
-            "install_runbook":{
-              "description":"",
-              "main_task_local_reference":{
-                "kind":"app_task",
-                "name":"340b03d2_dag"
-              },
-              "message_list":[
-
-              ],
-              "name":"3afec3ee_runbook",
-              "state":"ACTIVE",
-              "task_definition_list":[
-                {
-                  "attrs":{
-                    "edges":[
-                      {
-                        "edge_type":"user_defined",
-                        "from_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallJBoss"
-                        },
-                        "to_task_reference":{
-                          "kind":"app_task",
-                          "name":"SetingsJBoss"
                         },
                         "type":""
-                      },
-                      {
-                        "edge_type":"user_defined",
-                        "from_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallOpenJDK"
-                        },
-                        "to_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallJBoss"
+                     },
+                     "description":"",
+                     "editables":{
+                        "value":true
+                     },
+                     "label":"",
+                     "name":"AUTHORIZED_KEY",
+                     "type":"SECRET",
+                     "val_type":"STRING",
+                     "value":""
+                  },
+                  {
+                     "attrs":{
+                        "is_secret_modified":false,
+                        "secret_reference":{
+
                         },
                         "type":""
-                      },
-                      {
-                        "edge_type":"user_defined",
-                        "from_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallPackages"
-                        },
-                        "to_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallOpenJDK"
+                     },
+                     "description":"",
+                     "label":"",
+                     "name":"INSTANCE_PUBLIC_KEY",
+                     "type":"SECRET",
+                     "val_type":"STRING",
+                     "value":""
+                  },
+                  {
+                     "attrs":{
+                        "type":""
+                     },
+                     "description":"",
+                     "editables":{
+                        "value":true
+                     },
+                     "label":"",
+                     "name":"JBOSS_USER",
+                     "type":"LOCAL",
+                     "val_type":"STRING",
+                     "value":""
+                  },
+                  {
+                     "attrs":{
+                        "is_secret_modified":false,
+                        "secret_reference":{
+
                         },
                         "type":""
-                      },
-                      {
-                        "edge_type":"user_defined",
-                        "from_task_reference":{
-                          "kind":"app_task",
-                          "name":"SetingsJBoss"
-                        },
-                        "to_task_reference":{
-                          "kind":"app_task",
-                          "name":"SettingsAutoKey"
-                        },
+                     },
+                     "description":"",
+                     "editables":{
+                        "value":true
+                     },
+                     "label":"",
+                     "name":"JBOSS_USER_PASSWORD",
+                     "type":"SECRET",
+                     "val_type":"STRING",
+                     "value":""
+                  },
+                  {
+                     "attrs":{
                         "type":""
-                      }
-                    ],
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-                    {
-                      "kind":"app_task",
-                      "name":"InstallJBoss"
-                    },
-                    {
-                      "kind":"app_task",
-                      "name":"InstallOpenJDK"
-                    },
-                    {
-                      "kind":"app_task",
-                      "name":"InstallPackages"
-                    },
-                    {
-                      "kind":"app_task",
-                      "name":"SetingsJBoss"
-                    },
-                    {
-                      "kind":"app_task",
-                      "name":"SettingsAutoKey"
-                    }
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"340b03d2_dag",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_package",
-                    "name":"Package1"
-                  },
-                  "timeout_secs":"0",
-                  "type":"DAG",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "login_credential_local_reference":{
-                      "kind":"app_credential",
-                      "name":"centos"
-                    },
-                    "script":"#!\/bin\/bash\nset -ex\n\nsudo groupadd -r wildfly\nsudo useradd -r -g wildfly -d \/opt\/wildfly -s \/sbin\/nologin wildfly\n\n\nsudo wget https:\/\/download.jboss.org\/wildfly\/'@@{JBOSS_VERSION}@@'\/wildfly-'@@{JBOSS_VERSION}@@'.tar.gz -P \/tmp\n\nsudo tar xf \/tmp\/wildfly-'@@{JBOSS_VERSION}@@'.tar.gz -C \/opt\/\nsudo ln -s \/opt\/wildfly-'@@{JBOSS_VERSION}@@' \/opt\/wildfly\nsudo chown -RH wildfly: \/opt\/wildfly\n\nsudo mkdir -p \/etc\/wildfly\nsudo cp \/opt\/wildfly\/docs\/contrib\/scripts\/systemd\/wildfly.conf \/etc\/wildfly\/\n\necho '# The configuration you want to run\nWILDFLY_CONFIG=standalone.xml\n\n# The mode you want to run\nWILDFLY_MODE=standalone\n\n# The address to bind to\nWILDFLY_BIND=0.0.0.0' | sudo tee -a \/etc\/wildfly\/wildfly.conf\n\nsudo cp \/opt\/wildfly\/docs\/contrib\/scripts\/systemd\/launch.sh \/opt\/wildfly\/bin\/\nsudo sh -c 'chmod +x \/opt\/wildfly\/bin\/*.sh'\n\nsudo cp \/opt\/wildfly\/docs\/contrib\/scripts\/systemd\/wildfly.service \/etc\/systemd\/system\/\n\nsudo bash -c 'cat << EOF > \/opt\/wildfly\/bin\/customUser.sh\n#!\/bin\/sh\n\/opt\/wildfly\/bin\/add-user.sh '@@{JBOSS_USER}@@' '@@{JBOSS_USER_PASSWORD}@@'\nsleep 3\n\necho -n '@@{JBOSS_USER_PASSWORD}@@' | base64\nEOF'\nsudo chmod a+x \/opt\/wildfly\/bin\/customUser.sh\n\nsudo bash -c 'cat << EOF > \/opt\/wildfly\/standalone\/configuration\/standalone.xml\n<?xml version='1.0' encoding='UTF-8'?>\n\n<server xmlns=\"urn:jboss:domain:10.0\">\n    <extensions>\n        <extension module=\"org.jboss.as.clustering.infinispan\"\/>\n        <extension module=\"org.jboss.as.connector\"\/>\n        <extension module=\"org.jboss.as.deployment-scanner\"\/>\n        <extension module=\"org.jboss.as.ee\"\/>\n        <extension module=\"org.jboss.as.ejb3\"\/>\n        <extension module=\"org.jboss.as.jaxrs\"\/>\n        <extension module=\"org.jboss.as.jdr\"\/>\n        <extension module=\"org.jboss.as.jmx\"\/>\n        <extension module=\"org.jboss.as.jpa\"\/>\n        <extension module=\"org.jboss.as.jsf\"\/>\n        <extension module=\"org.jboss.as.logging\"\/>\n        <extension module=\"org.jboss.as.mail\"\/>\n        <extension module=\"org.jboss.as.naming\"\/>\n        <extension module=\"org.jboss.as.pojo\"\/>\n        <extension module=\"org.jboss.as.remoting\"\/>\n        <extension module=\"org.jboss.as.sar\"\/>\n        <extension module=\"org.jboss.as.security\"\/>\n        <extension module=\"org.jboss.as.transactions\"\/>\n        <extension module=\"org.jboss.as.webservices\"\/>\n        <extension module=\"org.jboss.as.weld\"\/>\n        <extension module=\"org.wildfly.extension.batch.jberet\"\/>\n        <extension module=\"org.wildfly.extension.bean-validation\"\/>\n        <extension module=\"org.wildfly.extension.core-management\"\/>\n        <extension module=\"org.wildfly.extension.discovery\"\/>\n        <extension module=\"org.wildfly.extension.ee-security\"\/>\n        <extension module=\"org.wildfly.extension.elytron\"\/>\n        <extension module=\"org.wildfly.extension.io\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.config-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.health-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.metrics-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.opentracing-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.request-controller\"\/>\n        <extension module=\"org.wildfly.extension.security.manager\"\/>\n        <extension module=\"org.wildfly.extension.undertow\"\/>\n    <\/extensions>\n    <management>\n        <security-realms>\n            <security-realm name=\"ManagementRealm\">\n                <authentication>\n                    <local default-user=\"$local\" skip-group-loading=\"true\"\/>\n                    <properties path=\"mgmt-users.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authentication>\n                <authorization map-groups-to-roles=\"false\">\n                    <properties path=\"mgmt-groups.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authorization>\n            <\/security-realm>\n            <security-realm name=\"ApplicationRealm\">\n                <server-identities>\n                    <ssl>\n                        <keystore path=\"application.keystore\" relative-to=\"jboss.server.config.dir\" keystore-password=\"password\" alias=\"server\" key-password=\"password\" generate-self-signed-certificate-host=\"localhost\"\/>\n                    <\/ssl>\n                <\/server-identities>\n                <authentication>\n                    <local default-user=\"$local\" allowed-users=\"*\" skip-group-loading=\"true\"\/>\n                    <properties path=\"application-users.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authentication>\n                <authorization>\n                    <properties path=\"application-roles.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authorization>\n            <\/security-realm>\n        <\/security-realms>\n        <audit-log>\n            <formatters>\n                <json-formatter name=\"json-formatter\"\/>\n            <\/formatters>\n            <handlers>\n                <file-handler name=\"file\" formatter=\"json-formatter\" path=\"audit-log.log\" relative-to=\"jboss.server.data.dir\"\/>\n            <\/handlers>\n            <logger log-boot=\"true\" log-read-only=\"false\" enabled=\"false\">\n                <handlers>\n                    <handler name=\"file\"\/>\n                <\/handlers>\n            <\/logger>\n        <\/audit-log>\n        <management-interfaces>\n            <http-interface security-realm=\"ManagementRealm\">\n                <http-upgrade enabled=\"true\"\/>\n                <socket-binding http=\"management-http\"\/>\n            <\/http-interface>\n        <\/management-interfaces>\n        <access-control provider=\"simple\">\n            <role-mapping>\n                <role name=\"SuperUser\">\n                    <include>\n                        <user name=\"$local\"\/>\n                    <\/include>\n                <\/role>\n                <role name=\"Administrator\">\n                    <include>\n                        <user realm=\"Jose Lus\" name=\"jose\"\/>\n                    <\/include>\n                <\/role>\n                <role name=\"Operator\">\n                    <exclude>\n                        <user realm=\"Jose Lus\" name=\"jose\"\/>\n                    <\/exclude>\n                <\/role>\n            <\/role-mapping>\n        <\/access-control>\n    <\/management>\n    <profile>\n        <subsystem xmlns=\"urn:jboss:domain:logging:6.0\">\n            <console-handler name=\"CONSOLE\">\n                <level name=\"INFO\"\/>\n                <formatter>\n                    <named-formatter name=\"COLOR-PATTERN\"\/>\n                <\/formatter>\n            <\/console-handler>\n            <periodic-rotating-file-handler name=\"FILE\" autoflush=\"true\">\n                <formatter>\n                    <named-formatter name=\"PATTERN\"\/>\n                <\/formatter>\n                <file relative-to=\"jboss.server.log.dir\" path=\"server.log\"\/>\n                <suffix value=\".yyyy-MM-dd\"\/>\n                <append value=\"true\"\/>\n            <\/periodic-rotating-file-handler>\n            <logger category=\"com.arjuna\">\n                <level name=\"WARN\"\/>\n            <\/logger>\n            <logger category=\"io.jaegertracing.Configuration\">\n                <level name=\"WARN\"\/>\n            <\/logger>\n            <logger category=\"org.jboss.as.config\">\n                <level name=\"DEBUG\"\/>\n            <\/logger>\n            <logger category=\"sun.rmi\">\n                <level name=\"WARN\"\/>\n            <\/logger>\n            <root-logger>\n                <level name=\"INFO\"\/>\n                <handlers>\n                    <handler name=\"CONSOLE\"\/>\n                    <handler name=\"FILE\"\/>\n                <\/handlers>\n            <\/root-logger>\n            <formatter name=\"PATTERN\">\n                <pattern-formatter pattern=\"%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n\"\/>\n            <\/formatter>\n            <formatter name=\"COLOR-PATTERN\">\n                <pattern-formatter pattern=\"%K{level}%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n\"\/>\n            <\/formatter>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:batch-jberet:2.0\">\n            <default-job-repository name=\"in-memory\"\/>\n            <default-thread-pool name=\"batch\"\/>\n            <job-repository name=\"in-memory\">\n                <in-memory\/>\n            <\/job-repository>\n            <thread-pool name=\"batch\">\n                <max-threads count=\"10\"\/>\n                <keepalive-time time=\"30\" unit=\"seconds\"\/>\n            <\/thread-pool>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:bean-validation:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:core-management:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:datasources:5.0\">\n            <datasources>\n                <datasource jndi-name=\"java:jboss\/datasources\/ExampleDS\" pool-name=\"ExampleDS\" enabled=\"true\" use-java-context=\"true\" statistics-enabled=\"${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}\">\n                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE<\/connection-url>\n                    <driver>h2<\/driver>\n                    <security>\n                        <user-name>sa<\/user-name>\n                        <password>sa<\/password>\n                    <\/security>\n                <\/datasource>\n                <drivers>\n                    <driver name=\"h2\" module=\"com.h2database.h2\">\n                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource<\/xa-datasource-class>\n                    <\/driver>\n                <\/drivers>\n            <\/datasources>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:deployment-scanner:2.0\">\n            <deployment-scanner path=\"deployments\" relative-to=\"jboss.server.base.dir\" scan-interval=\"5000\" runtime-failure-causes-rollback=\"${jboss.deployment.scanner.rollback.on.failure:false}\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:discovery:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:ee:4.0\">\n            <spec-descriptor-property-replacement>false<\/spec-descriptor-property-replacement>\n            <concurrent>\n                <context-services>\n                    <context-service name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/context\/default\" use-transaction-setup-provider=\"true\"\/>\n                <\/context-services>\n                <managed-thread-factories>\n                    <managed-thread-factory name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/factory\/default\" context-service=\"default\"\/>\n                <\/managed-thread-factories>\n                <managed-executor-services>\n                    <managed-executor-service name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/executor\/default\" context-service=\"default\" hung-task-threshold=\"60000\" keepalive-time=\"5000\"\/>\n                <\/managed-executor-services>\n                <managed-scheduled-executor-services>\n                    <managed-scheduled-executor-service name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/scheduler\/default\" context-service=\"default\" hung-task-threshold=\"60000\" keepalive-time=\"3000\"\/>\n                <\/managed-scheduled-executor-services>\n            <\/concurrent>\n            <default-bindings context-service=\"java:jboss\/ee\/concurrency\/context\/default\" datasource=\"java:jboss\/datasources\/ExampleDS\" managed-executor-service=\"java:jboss\/ee\/concurrency\/executor\/default\" managed-scheduled-executor-service=\"java:jboss\/ee\/concurrency\/scheduler\/default\" managed-thread-factory=\"java:jboss\/ee\/concurrency\/factory\/default\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:ee-security:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:ejb3:5.0\">\n            <session-bean>\n                <stateless>\n                    <bean-instance-pool-ref pool-name=\"slsb-strict-max-pool\"\/>\n                <\/stateless>\n                <stateful default-access-timeout=\"5000\" cache-ref=\"simple\" passivation-disabled-cache-ref=\"simple\"\/>\n                <singleton default-access-timeout=\"5000\"\/>\n            <\/session-bean>\n            <pools>\n                <bean-instance-pools>\n                    <strict-max-pool name=\"mdb-strict-max-pool\" derive-size=\"from-cpu-count\" instance-acquisition-timeout=\"5\" instance-acquisition-timeout-unit=\"MINUTES\"\/>\n                    <strict-max-pool name=\"slsb-strict-max-pool\" derive-size=\"from-worker-pools\" instance-acquisition-timeout=\"5\" instance-acquisition-timeout-unit=\"MINUTES\"\/>\n                <\/bean-instance-pools>\n            <\/pools>\n            <caches>\n                <cache name=\"simple\"\/>\n                <cache name=\"distributable\" passivation-store-ref=\"infinispan\" aliases=\"passivating clustered\"\/>\n            <\/caches>\n            <passivation-stores>\n                <passivation-store name=\"infinispan\" cache-container=\"ejb\" max-size=\"10000\"\/>\n            <\/passivation-stores>\n            <async thread-pool-name=\"default\"\/>\n            <timer-service thread-pool-name=\"default\" default-data-store=\"default-file-store\">\n                <data-stores>\n                    <file-data-store name=\"default-file-store\" path=\"timer-service-data\" relative-to=\"jboss.server.data.dir\"\/>\n                <\/data-stores>\n            <\/timer-service>\n            <remote connector-ref=\"http-remoting-connector\" thread-pool-name=\"default\">\n                <channel-creation-options>\n                    <option name=\"READ_TIMEOUT\" value=\"${prop.remoting-connector.read.timeout:20}\" type=\"xnio\"\/>\n                    <option name=\"MAX_OUTBOUND_MESSAGES\" value=\"1234\" type=\"remoting\"\/>\n                <\/channel-creation-options>\n            <\/remote>\n            <thread-pools>\n                <thread-pool name=\"default\">\n                    <max-threads count=\"10\"\/>\n                    <keepalive-time time=\"100\" unit=\"milliseconds\"\/>\n                <\/thread-pool>\n            <\/thread-pools>\n            <default-security-domain value=\"other\"\/>\n            <default-missing-method-permissions-deny-access value=\"true\"\/>\n            <statistics enabled=\"${wildfly.ejb3.statistics-enabled:${wildfly.statistics-enabled:false}}\"\/>\n            <log-system-exceptions value=\"true\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:wildfly:elytron:6.0\" final-providers=\"combined-providers\" disallowed-providers=\"OracleUcrypto\">\n            <providers>\n                <aggregate-providers name=\"combined-providers\">\n                    <providers name=\"elytron\"\/>\n                    <providers name=\"openssl\"\/>\n                <\/aggregate-providers>\n                <provider-loader name=\"elytron\" module=\"org.wildfly.security.elytron\"\/>\n                <provider-loader name=\"openssl\" module=\"org.wildfly.openssl\"\/>\n            <\/providers>\n            <audit-logging>\n                <file-audit-log name=\"local-audit\" path=\"audit.log\" relative-to=\"jboss.server.log.dir\" format=\"JSON\"\/>\n            <\/audit-logging>\n            <security-domains>\n                <security-domain name=\"ApplicationDomain\" default-realm=\"ApplicationRealm\" permission-mapper=\"default-permission-mapper\">\n                    <realm name=\"ApplicationRealm\" role-decoder=\"groups-to-roles\"\/>\n                    <realm name=\"local\"\/>\n                <\/security-domain>\n                <security-domain name=\"ManagementDomain\" default-realm=\"ManagementRealm\" permission-mapper=\"default-permission-mapper\">\n                    <realm name=\"ManagementRealm\" role-decoder=\"groups-to-roles\"\/>\n                    <realm name=\"local\" role-mapper=\"super-user-mapper\"\/>\n                <\/security-domain>\n            <\/security-domains>\n            <security-realms>\n                <identity-realm name=\"local\" identity=\"$local\"\/>\n                <properties-realm name=\"ApplicationRealm\">\n                    <users-properties path=\"application-users.properties\" relative-to=\"jboss.server.config.dir\" digest-realm-name=\"ApplicationRealm\"\/>\n                    <groups-properties path=\"application-roles.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/properties-realm>\n                <properties-realm name=\"ManagementRealm\">\n                    <users-properties path=\"mgmt-users.properties\" relative-to=\"jboss.server.config.dir\" digest-realm-name=\"ManagementRealm\"\/>\n                    <groups-properties path=\"mgmt-groups.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/properties-realm>\n            <\/security-realms>\n            <mappers>\n                <simple-permission-mapper name=\"default-permission-mapper\" mapping-mode=\"first\">\n                    <permission-mapping>\n                        <principal name=\"anonymous\"\/>\n                        <permission-set name=\"default-permissions\"\/>\n                    <\/permission-mapping>\n                    <permission-mapping match-all=\"true\">\n                        <permission-set name=\"login-permission\"\/>\n                        <permission-set name=\"default-permissions\"\/>\n                    <\/permission-mapping>\n                <\/simple-permission-mapper>\n                <constant-realm-mapper name=\"local\" realm-name=\"local\"\/>\n                <simple-role-decoder name=\"groups-to-roles\" attribute=\"groups\"\/>\n                <constant-role-mapper name=\"super-user-mapper\">\n                    <role name=\"SuperUser\"\/>\n                <\/constant-role-mapper>\n            <\/mappers>\n            <permission-sets>\n                <permission-set name=\"login-permission\">\n                    <permission class-name=\"org.wildfly.security.auth.permission.LoginPermission\"\/>\n                <\/permission-set>\n                <permission-set name=\"default-permissions\">\n                    <permission class-name=\"org.wildfly.extension.batch.jberet.deployment.BatchPermission\" module=\"org.wildfly.extension.batch.jberet\" target-name=\"*\"\/>\n                    <permission class-name=\"org.wildfly.transaction.client.RemoteTransactionPermission\" module=\"org.wildfly.transaction.client\"\/>\n                    <permission class-name=\"org.jboss.ejb.client.RemoteEJBPermission\" module=\"org.jboss.ejb-client\"\/>\n                <\/permission-set>\n            <\/permission-sets>\n            <http>\n                <http-authentication-factory name=\"management-http-authentication\" security-domain=\"ManagementDomain\" http-server-mechanism-factory=\"global\">\n                    <mechanism-configuration>\n                        <mechanism mechanism-name=\"DIGEST\">\n                            <mechanism-realm realm-name=\"ManagementRealm\"\/>\n                        <\/mechanism>\n                    <\/mechanism-configuration>\n                <\/http-authentication-factory>\n                <provider-http-server-mechanism-factory name=\"global\"\/>\n            <\/http>\n            <sasl>\n                <sasl-authentication-factory name=\"application-sasl-authentication\" sasl-server-factory=\"configured\" security-domain=\"ApplicationDomain\">\n                    <mechanism-configuration>\n                        <mechanism mechanism-name=\"JBOSS-LOCAL-USER\" realm-mapper=\"local\"\/>\n                        <mechanism mechanism-name=\"DIGEST-MD5\">\n                            <mechanism-realm realm-name=\"ApplicationRealm\"\/>\n                        <\/mechanism>\n                    <\/mechanism-configuration>\n                <\/sasl-authentication-factory>\n                <sasl-authentication-factory name=\"management-sasl-authentication\" sasl-server-factory=\"configured\" security-domain=\"ManagementDomain\">\n                    <mechanism-configuration>\n                        <mechanism mechanism-name=\"JBOSS-LOCAL-USER\" realm-mapper=\"local\"\/>\n                        <mechanism mechanism-name=\"DIGEST-MD5\">\n                            <mechanism-realm realm-name=\"ManagementRealm\"\/>\n                        <\/mechanism>\n                    <\/mechanism-configuration>\n                <\/sasl-authentication-factory>\n                <configurable-sasl-server-factory name=\"configured\" sasl-server-factory=\"elytron\">\n                    <properties>\n                        <property name=\"wildfly.sasl.local-user.default-user\" value=\"$local\"\/>\n                    <\/properties>\n                <\/configurable-sasl-server-factory>\n                <mechanism-provider-filtering-sasl-server-factory name=\"elytron\" sasl-server-factory=\"global\">\n                    <filters>\n                        <filter provider-name=\"WildFlyElytron\"\/>\n                    <\/filters>\n                <\/mechanism-provider-filtering-sasl-server-factory>\n                <provider-sasl-server-factory name=\"global\"\/>\n            <\/sasl>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:infinispan:8.0\">\n            <cache-container name=\"server\" default-cache=\"default\" module=\"org.wildfly.clustering.server\">\n                <local-cache name=\"default\">\n                    <transaction mode=\"BATCH\"\/>\n                <\/local-cache>\n            <\/cache-container>\n            <cache-container name=\"web\" default-cache=\"passivation\" module=\"org.wildfly.clustering.web.infinispan\">\n                <local-cache name=\"passivation\">\n                    <locking isolation=\"REPEATABLE_READ\"\/>\n                    <transaction mode=\"BATCH\"\/>\n                    <file-store passivation=\"true\" purge=\"false\"\/>\n                <\/local-cache>\n            <\/cache-container>\n            <cache-container name=\"ejb\" aliases=\"sfsb\" default-cache=\"passivation\" module=\"org.wildfly.clustering.ejb.infinispan\">\n                <local-cache name=\"passivation\">\n                    <locking isolation=\"REPEATABLE_READ\"\/>\n                    <transaction mode=\"BATCH\"\/>\n                    <file-store passivation=\"true\" purge=\"false\"\/>\n                <\/local-cache>\n            <\/cache-container>\n            <cache-container name=\"hibernate\" module=\"org.infinispan.hibernate-cache\">\n                <local-cache name=\"entity\">\n                    <object-memory size=\"10000\"\/>\n                    <expiration max-idle=\"100000\"\/>\n                <\/local-cache>\n                <local-cache name=\"local-query\">\n                    <object-memory size=\"10000\"\/>\n                    <expiration max-idle=\"100000\"\/>\n                <\/local-cache>\n                <local-cache name=\"timestamps\"\/>\n            <\/cache-container>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:io:3.0\">\n            <worker name=\"default\"\/>\n            <buffer-pool name=\"default\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jaxrs:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:jca:5.0\">\n            <archive-validation enabled=\"true\" fail-on-error=\"true\" fail-on-warn=\"false\"\/>\n            <bean-validation enabled=\"true\"\/>\n            <default-workmanager>\n                <short-running-threads>\n                    <core-threads count=\"50\"\/>\n                    <queue-length count=\"50\"\/>\n                    <max-threads count=\"50\"\/>\n                    <keepalive-time time=\"10\" unit=\"seconds\"\/>\n                <\/short-running-threads>\n                <long-running-threads>\n                    <core-threads count=\"50\"\/>\n                    <queue-length count=\"50\"\/>\n                    <max-threads count=\"50\"\/>\n                    <keepalive-time time=\"10\" unit=\"seconds\"\/>\n                <\/long-running-threads>\n            <\/default-workmanager>\n            <cached-connection-manager\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jdr:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:jmx:1.3\">\n            <expose-resolved-model\/>\n            <expose-expression-model\/>\n            <remoting-connector\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jpa:1.1\">\n            <jpa default-datasource=\"\" default-extended-persistence-inheritance=\"DEEP\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jsf:1.1\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:mail:3.0\">\n            <mail-session name=\"default\" jndi-name=\"java:jboss\/mail\/Default\">\n                <smtp-server outbound-socket-binding-ref=\"mail-smtp\"\/>\n            <\/mail-session>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:wildfly:microprofile-config-smallrye:1.0\"\/>\n        <subsystem xmlns=\"urn:wildfly:microprofile-health-smallrye:1.0\" security-enabled=\"false\"\/>\n        <subsystem xmlns=\"urn:wildfly:microprofile-metrics-smallrye:2.0\" security-enabled=\"false\" exposed-subsystems=\"*\" prefix=\"${wildfly.metrics.prefix:wildfly}\"\/>\n        <subsystem xmlns=\"urn:wildfly:microprofile-opentracing-smallrye:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:naming:2.0\">\n            <remote-naming\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:pojo:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:remoting:4.0\">\n            <http-connector name=\"http-remoting-connector\" connector-ref=\"default\" security-realm=\"ApplicationRealm\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:request-controller:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:resource-adapters:5.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:sar:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:security:2.0\">\n            <security-domains>\n                <security-domain name=\"other\" cache-type=\"default\">\n                    <authentication>\n                        <login-module code=\"Remoting\" flag=\"optional\">\n                            <module-option name=\"password-stacking\" value=\"useFirstPass\"\/>\n                        <\/login-module>\n                        <login-module code=\"RealmDirect\" flag=\"required\">\n                            <module-option name=\"password-stacking\" value=\"useFirstPass\"\/>\n                        <\/login-module>\n                    <\/authentication>\n                <\/security-domain>\n                <security-domain name=\"jboss-web-policy\" cache-type=\"default\">\n                    <authorization>\n                        <policy-module code=\"Delegating\" flag=\"required\"\/>\n                    <\/authorization>\n                <\/security-domain>\n                <security-domain name=\"jaspitest\" cache-type=\"default\">\n                    <authentication-jaspi>\n                        <login-module-stack name=\"dummy\">\n                            <login-module code=\"Dummy\" flag=\"optional\"\/>\n                        <\/login-module-stack>\n                        <auth-module code=\"Dummy\"\/>\n                    <\/authentication-jaspi>\n                <\/security-domain>\n                <security-domain name=\"jboss-ejb-policy\" cache-type=\"default\">\n                    <authorization>\n                        <policy-module code=\"Delegating\" flag=\"required\"\/>\n                    <\/authorization>\n                <\/security-domain>\n            <\/security-domains>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:security-manager:1.0\">\n            <deployment-permissions>\n                <maximum-set>\n                    <permission class=\"java.security.AllPermission\"\/>\n                <\/maximum-set>\n            <\/deployment-permissions>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:transactions:5.0\">\n            <core-environment node-identifier=\"${jboss.tx.node.id:1}\">\n                <process-id>\n                    <uuid\/>\n                <\/process-id>\n            <\/core-environment>\n            <recovery-environment socket-binding=\"txn-recovery-environment\" status-socket-binding=\"txn-status-manager\"\/>\n            <coordinator-environment statistics-enabled=\"${wildfly.transactions.statistics-enabled:${wildfly.statistics-enabled:false}}\"\/>\n            <object-store path=\"tx-object-store\" relative-to=\"jboss.server.data.dir\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:undertow:8.0\" default-server=\"default-server\" default-virtual-host=\"default-host\" default-servlet-container=\"default\" default-security-domain=\"other\" statistics-enabled=\"${wildfly.undertow.statistics-enabled:${wildfly.statistics-enabled:false}}\">\n            <buffer-cache name=\"default\"\/>\n            <server name=\"default-server\">\n                <http-listener name=\"default\" socket-binding=\"http\" redirect-socket=\"https\" enable-http2=\"true\"\/>\n                <https-listener name=\"https\" socket-binding=\"https\" security-realm=\"ApplicationRealm\" enable-http2=\"true\"\/>\n                <host name=\"default-host\" alias=\"localhost\">\n                    <location name=\"\/\" handler=\"welcome-content\"\/>\n                    <http-invoker security-realm=\"ApplicationRealm\"\/>\n                <\/host>\n            <\/server>\n            <servlet-container name=\"default\">\n                <jsp-config\/>\n                <websockets\/>\n            <\/servlet-container>\n            <handlers>\n                <file name=\"welcome-content\" path=\"${jboss.home.dir}\/welcome-content\"\/>\n            <\/handlers>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:webservices:2.0\" statistics-enabled=\"${wildfly.webservices.statistics-enabled:${wildfly.statistics-enabled:false}}\">\n            <wsdl-host>${jboss.bind.address:127.0.0.1}<\/wsdl-host>\n            <endpoint-config name=\"Standard-Endpoint-Config\"\/>\n            <endpoint-config name=\"Recording-Endpoint-Config\">\n                <pre-handler-chain name=\"recording-handlers\" protocol-bindings=\"##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM\">\n                    <handler name=\"RecordingHandler\" class=\"org.jboss.ws.common.invocation.RecordingServerHandler\"\/>\n                <\/pre-handler-chain>\n            <\/endpoint-config>\n            <client-config name=\"Standard-Client-Config\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:weld:4.0\"\/>\n    <\/profile>\n    <interfaces>\n        <interface name=\"management\">\n            <any-address\/>\n        <\/interface>\n        <interface name=\"public\">\n            <any-address\/>\n        <\/interface>\n    <\/interfaces>\n    <socket-binding-group name=\"standard-sockets\" default-interface=\"public\" port-offset=\"${jboss.socket.binding.port-offset:0}\">\n        <socket-binding name=\"management-http\" interface=\"management\" port=\"${jboss.management.http.port:9990}\"\/>\n        <socket-binding name=\"management-https\" interface=\"management\" port=\"${jboss.management.https.port:9993}\"\/>\n        <socket-binding name=\"ajp\" port=\"${jboss.ajp.port:8009}\"\/>\n        <socket-binding name=\"http\" port=\"${jboss.http.port:8080}\"\/>\n        <socket-binding name=\"https\" port=\"${jboss.https.port:8443}\"\/>\n        <socket-binding name=\"txn-recovery-environment\" port=\"4712\"\/>\n        <socket-binding name=\"txn-status-manager\" port=\"4713\"\/>\n        <outbound-socket-binding name=\"mail-smtp\">\n            <remote-destination host=\"localhost\" port=\"25\"\/>\n        <\/outbound-socket-binding>\n    <\/socket-binding-group>\n<\/server>\nEOF'",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"InstallJBoss",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"JBoss"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "script":"#!\/bin\/bash\nset -ex\n\nsudo yum install -y java-1.8.0-openjdk-devel\nsudo ln -s \/usr\/lib\/jvm\/java-1.8.0-openjdk-*\/ \/usr\/jdk8\nexport JAVA_HOME=\/usr\/jdk8",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"InstallOpenJDK",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"JBoss"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "script":"#!\/bin\/bash\nset -ex\n\nsudo yum update -y\nsudo yum install -y wget curl vim\nsudo yum clean packages\nsudo yum clean headers\nsudo yum clean metadata\nsudo yum clean all\n",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"InstallPackages",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"JBoss"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "login_credential_local_reference":{
-                      "kind":"app_credential",
-                      "name":"centos"
-                    },
-                    "script":"#!\/bin\/bash\nset -ex\n\nsudo \/opt\/wildfly\/bin\/customUser.sh '@@{JBOSS_USER}@@' '@@{JBOSS_USER_PASSWORD}@@'\n\nsudo chown wildfly:wildfly \/opt\/wildfly\/standalone\/configuration\/standalone.xml\n\nsudo systemctl daemon-reload\nsudo systemctl start wildfly\nsudo systemctl enable wildfly",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"SetingsJBoss",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"JBoss"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "login_credential_local_reference":{
-                      "kind":"app_credential",
-                      "name":"centos"
-                    },
-                    "script":"#!\/bin\/bash\nset -ex\n\ncd ~\/.ssh\/\n\necho '@@{AUTHORIZED_KEY}@@' >> authorized_keys\nsudo chmod 600 authorized_keys",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"SettingsAutoKey",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"JBoss"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                }
-              ],
-              "variable_list":[
-
-              ]
-            },
-            "type":"",
-            "uninstall_runbook":{
-              "description":"",
-              "main_task_local_reference":{
-                "kind":"app_task",
-                "name":"afc2428c_dag"
-              },
-              "message_list":[
-
-              ],
-              "name":"4111f321_runbook",
-              "state":"ACTIVE",
-              "task_definition_list":[
-                {
-                  "attrs":{
-                    "edges":[
-
-                    ],
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"afc2428c_dag",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_package",
-                    "name":"Package1"
-                  },
-                  "timeout_secs":"0",
-                  "type":"DAG",
-                  "variable_list":[
-
-                  ]
-                }
-              ],
-              "variable_list":[
-
-              ]
+                     },
+                     "description":"",
+                     "editables":{
+                        "value":true
+                     },
+                     "label":"",
+                     "name":"JBOSS_VERSION",
+                     "type":"LOCAL",
+                     "val_type":"STRING",
+                     "value":""
+                  }
+               ]
             }
-          },
-          "service_local_reference_list":[
-            {
-              "kind":"app_service",
-              "name":"JBoss"
+         ],
+         "client_attrs":{
+            "6e337ae8_deployment":{
+               "x":560.4859719515,
+               "y":361.5503327348
             }
-          ],
-          "type":"DEB",
-          "variable_list":[
-
-          ],
-          "version":""
-        }
-      ],
-      "published_service_definition_list":[
-
-      ],
-      "service_definition_list":[
-        {
-          "action_list":[
+         },
+         "credential_definition_list":[
             {
-              "critical":false,
-              "description":"System action for creating an application",
-              "name":"action_create",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"545f5216_dag"
-                },
-                "name":"5b823b92_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
+               "description":"",
+               "name":"centos",
+               "secret":{
+                  "attrs":{
+                     "is_secret_modified":false,
+                     "secret_reference":{
 
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"545f5216_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"JBoss"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
+                     }
                   }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for deleting an application. Deletes created VMs as well",
-              "name":"action_delete",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"bb9a8ef2_dag"
-                },
-                "name":"0c90d9cb_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"bb9a8ef2_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"JBoss"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for restarting an application",
-              "name":"action_restart",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"d359c0ba_dag"
-                },
-                "name":"31827abf_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"d359c0ba_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"JBoss"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for starting an application",
-              "name":"action_start",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"180ecb93_dag"
-                },
-                "name":"c83a80f6_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"180ecb93_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"JBoss"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for stopping an application",
-              "name":"action_stop",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"317e75ff_dag"
-                },
-                "name":"df77c3b0_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"317e75ff_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"JBoss"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
+               },
+               "type":"KEY",
+               "username":"centos"
             }
-          ],
-          "depends_on_list":[
+         ],
+         "default_credential_local_reference":{
+            "kind":"app_credential",
+            "name":"centos"
+         },
+         "package_definition_list":[
+            {
+               "action_list":[
 
-          ],
-          "description":"",
-          "name":"JBoss",
-          "port_list":[
+               ],
+               "description":"",
+               "name":"Package1",
+               "options":{
+                  "install_runbook":{
+                     "description":"",
+                     "main_task_local_reference":{
+                        "kind":"app_task",
+                        "name":"340b03d2_dag"
+                     },
+                     "message_list":[
 
-          ],
-          "singleton":false,
-          "tier":"",
-          "variable_list":[
+                     ],
+                     "name":"3afec3ee_runbook",
+                     "state":"ACTIVE",
+                     "task_definition_list":[
+                        {
+                           "attrs":{
+                              "edges":[
+                                 {
+                                    "edge_type":"user_defined",
+                                    "from_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"InstallJBoss"
+                                    },
+                                    "to_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"SetingsJBoss"
+                                    },
+                                    "type":""
+                                 },
+                                 {
+                                    "edge_type":"user_defined",
+                                    "from_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"InstallOpenJDK"
+                                    },
+                                    "to_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"InstallJBoss"
+                                    },
+                                    "type":""
+                                 },
+                                 {
+                                    "edge_type":"user_defined",
+                                    "from_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"InstallPackages"
+                                    },
+                                    "to_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"InstallOpenJDK"
+                                    },
+                                    "type":""
+                                 },
+                                 {
+                                    "edge_type":"user_defined",
+                                    "from_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"SetingsJBoss"
+                                    },
+                                    "to_task_reference":{
+                                       "kind":"app_task",
+                                       "name":"SettingsAutoKey"
+                                    },
+                                    "type":""
+                                 }
+                              ],
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+                              {
+                                 "kind":"app_task",
+                                 "name":"InstallJBoss"
+                              },
+                              {
+                                 "kind":"app_task",
+                                 "name":"InstallOpenJDK"
+                              },
+                              {
+                                 "kind":"app_task",
+                                 "name":"InstallPackages"
+                              },
+                              {
+                                 "kind":"app_task",
+                                 "name":"SetingsJBoss"
+                              },
+                              {
+                                 "kind":"app_task",
+                                 "name":"SettingsAutoKey"
+                              }
+                           ],
+                           "description":"",
+                           "message_list":[
 
-          ]
-        }
-      ],
-      "substrate_definition_list":[
-        {
-          "action_list":[
+                           ],
+                           "name":"340b03d2_dag",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_package",
+                              "name":"Package1"
+                           },
+                           "timeout_secs":"0",
+                           "type":"DAG",
+                           "variable_list":[
 
-          ],
-          "create_spec":{
-            "availability_zone_reference":null,
-            "backup_policy":null,
-            "categories":"",
-            "cluster_reference":null,
-            "name":"JbossMachine",
-            "resources":{
-              "boot_config":{
-                "boot_device":{
-                  "disk_address":{
-                    "adapter_type":"SCSI",
-                    "device_index":0,
-                    "type":""
+                           ]
+                        },
+                        {
+                           "attrs":{
+                              "command_line_args":"",
+                              "exit_status":[
+
+                              ],
+                              "login_credential_local_reference":{
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\nsudo groupadd -r wildfly\nsudo useradd -r -g wildfly -d \/opt\/wildfly -s \/sbin\/nologin wildfly\n\n\nsudo wget https:\/\/download.jboss.org\/wildfly\/'@@{JBOSS_VERSION}@@'\/wildfly-'@@{JBOSS_VERSION}@@'.tar.gz -P \/tmp\n\nsudo tar xf \/tmp\/wildfly-'@@{JBOSS_VERSION}@@'.tar.gz -C \/opt\/\nsudo ln -s \/opt\/wildfly-'@@{JBOSS_VERSION}@@' \/opt\/wildfly\nsudo chown -RH wildfly: \/opt\/wildfly\n\nsudo mkdir -p \/etc\/wildfly\nsudo cp \/opt\/wildfly\/docs\/contrib\/scripts\/systemd\/wildfly.conf \/etc\/wildfly\/\n\necho '# The configuration you want to run\nWILDFLY_CONFIG=standalone.xml\n\n# The mode you want to run\nWILDFLY_MODE=standalone\n\n# The address to bind to\nWILDFLY_BIND=0.0.0.0' | sudo tee -a \/etc\/wildfly\/wildfly.conf\n\nsudo cp \/opt\/wildfly\/docs\/contrib\/scripts\/systemd\/launch.sh \/opt\/wildfly\/bin\/\nsudo sh -c 'chmod +x \/opt\/wildfly\/bin\/*.sh'\n\nsudo cp \/opt\/wildfly\/docs\/contrib\/scripts\/systemd\/wildfly.service \/etc\/systemd\/system\/\n\nsudo bash -c 'cat << EOF > \/opt\/wildfly\/bin\/customUser.sh\n#!\/bin\/sh\n\/opt\/wildfly\/bin\/add-user.sh '@@{JBOSS_USER}@@' '@@{JBOSS_USER_PASSWORD}@@'\nsleep 3\n\necho -n '@@{JBOSS_USER_PASSWORD}@@' | base64\nEOF'\nsudo chmod a+x \/opt\/wildfly\/bin\/customUser.sh\n\nsudo bash -c 'cat << EOF > \/opt\/wildfly\/standalone\/configuration\/standalone.xml\n<?xml version='1.0' encoding='UTF-8'?>\n\n<server xmlns=\"urn:jboss:domain:10.0\">\n    <extensions>\n        <extension module=\"org.jboss.as.clustering.infinispan\"\/>\n        <extension module=\"org.jboss.as.connector\"\/>\n        <extension module=\"org.jboss.as.deployment-scanner\"\/>\n        <extension module=\"org.jboss.as.ee\"\/>\n        <extension module=\"org.jboss.as.ejb3\"\/>\n        <extension module=\"org.jboss.as.jaxrs\"\/>\n        <extension module=\"org.jboss.as.jdr\"\/>\n        <extension module=\"org.jboss.as.jmx\"\/>\n        <extension module=\"org.jboss.as.jpa\"\/>\n        <extension module=\"org.jboss.as.jsf\"\/>\n        <extension module=\"org.jboss.as.logging\"\/>\n        <extension module=\"org.jboss.as.mail\"\/>\n        <extension module=\"org.jboss.as.naming\"\/>\n        <extension module=\"org.jboss.as.pojo\"\/>\n        <extension module=\"org.jboss.as.remoting\"\/>\n        <extension module=\"org.jboss.as.sar\"\/>\n        <extension module=\"org.jboss.as.security\"\/>\n        <extension module=\"org.jboss.as.transactions\"\/>\n        <extension module=\"org.jboss.as.webservices\"\/>\n        <extension module=\"org.jboss.as.weld\"\/>\n        <extension module=\"org.wildfly.extension.batch.jberet\"\/>\n        <extension module=\"org.wildfly.extension.bean-validation\"\/>\n        <extension module=\"org.wildfly.extension.core-management\"\/>\n        <extension module=\"org.wildfly.extension.discovery\"\/>\n        <extension module=\"org.wildfly.extension.ee-security\"\/>\n        <extension module=\"org.wildfly.extension.elytron\"\/>\n        <extension module=\"org.wildfly.extension.io\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.config-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.health-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.metrics-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.microprofile.opentracing-smallrye\"\/>\n        <extension module=\"org.wildfly.extension.request-controller\"\/>\n        <extension module=\"org.wildfly.extension.security.manager\"\/>\n        <extension module=\"org.wildfly.extension.undertow\"\/>\n    <\/extensions>\n    <management>\n        <security-realms>\n            <security-realm name=\"ManagementRealm\">\n                <authentication>\n                    <local default-user=\"$local\" skip-group-loading=\"true\"\/>\n                    <properties path=\"mgmt-users.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authentication>\n                <authorization map-groups-to-roles=\"false\">\n                    <properties path=\"mgmt-groups.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authorization>\n            <\/security-realm>\n            <security-realm name=\"ApplicationRealm\">\n                <server-identities>\n                    <ssl>\n                        <keystore path=\"application.keystore\" relative-to=\"jboss.server.config.dir\" keystore-password=\"password\" alias=\"server\" key-password=\"password\" generate-self-signed-certificate-host=\"localhost\"\/>\n                    <\/ssl>\n                <\/server-identities>\n                <authentication>\n                    <local default-user=\"$local\" allowed-users=\"*\" skip-group-loading=\"true\"\/>\n                    <properties path=\"application-users.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authentication>\n                <authorization>\n                    <properties path=\"application-roles.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/authorization>\n            <\/security-realm>\n        <\/security-realms>\n        <audit-log>\n            <formatters>\n                <json-formatter name=\"json-formatter\"\/>\n            <\/formatters>\n            <handlers>\n                <file-handler name=\"file\" formatter=\"json-formatter\" path=\"audit-log.log\" relative-to=\"jboss.server.data.dir\"\/>\n            <\/handlers>\n            <logger log-boot=\"true\" log-read-only=\"false\" enabled=\"false\">\n                <handlers>\n                    <handler name=\"file\"\/>\n                <\/handlers>\n            <\/logger>\n        <\/audit-log>\n        <management-interfaces>\n            <http-interface security-realm=\"ManagementRealm\">\n                <http-upgrade enabled=\"true\"\/>\n                <socket-binding http=\"management-http\"\/>\n            <\/http-interface>\n        <\/management-interfaces>\n        <access-control provider=\"simple\">\n            <role-mapping>\n                <role name=\"SuperUser\">\n                    <include>\n                        <user name=\"$local\"\/>\n                    <\/include>\n                <\/role>\n                <role name=\"Administrator\">\n                    <include>\n                        <user realm=\"Jose Lus\" name=\"jose\"\/>\n                    <\/include>\n                <\/role>\n                <role name=\"Operator\">\n                    <exclude>\n                        <user realm=\"Jose Lus\" name=\"jose\"\/>\n                    <\/exclude>\n                <\/role>\n            <\/role-mapping>\n        <\/access-control>\n    <\/management>\n    <profile>\n        <subsystem xmlns=\"urn:jboss:domain:logging:6.0\">\n            <console-handler name=\"CONSOLE\">\n                <level name=\"INFO\"\/>\n                <formatter>\n                    <named-formatter name=\"COLOR-PATTERN\"\/>\n                <\/formatter>\n            <\/console-handler>\n            <periodic-rotating-file-handler name=\"FILE\" autoflush=\"true\">\n                <formatter>\n                    <named-formatter name=\"PATTERN\"\/>\n                <\/formatter>\n                <file relative-to=\"jboss.server.log.dir\" path=\"server.log\"\/>\n                <suffix value=\".yyyy-MM-dd\"\/>\n                <append value=\"true\"\/>\n            <\/periodic-rotating-file-handler>\n            <logger category=\"com.arjuna\">\n                <level name=\"WARN\"\/>\n            <\/logger>\n            <logger category=\"io.jaegertracing.Configuration\">\n                <level name=\"WARN\"\/>\n            <\/logger>\n            <logger category=\"org.jboss.as.config\">\n                <level name=\"DEBUG\"\/>\n            <\/logger>\n            <logger category=\"sun.rmi\">\n                <level name=\"WARN\"\/>\n            <\/logger>\n            <root-logger>\n                <level name=\"INFO\"\/>\n                <handlers>\n                    <handler name=\"CONSOLE\"\/>\n                    <handler name=\"FILE\"\/>\n                <\/handlers>\n            <\/root-logger>\n            <formatter name=\"PATTERN\">\n                <pattern-formatter pattern=\"%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n\"\/>\n            <\/formatter>\n            <formatter name=\"COLOR-PATTERN\">\n                <pattern-formatter pattern=\"%K{level}%d{HH:mm:ss,SSS} %-5p [%c] (%t) %s%e%n\"\/>\n            <\/formatter>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:batch-jberet:2.0\">\n            <default-job-repository name=\"in-memory\"\/>\n            <default-thread-pool name=\"batch\"\/>\n            <job-repository name=\"in-memory\">\n                <in-memory\/>\n            <\/job-repository>\n            <thread-pool name=\"batch\">\n                <max-threads count=\"10\"\/>\n                <keepalive-time time=\"30\" unit=\"seconds\"\/>\n            <\/thread-pool>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:bean-validation:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:core-management:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:datasources:5.0\">\n            <datasources>\n                <datasource jndi-name=\"java:jboss\/datasources\/ExampleDS\" pool-name=\"ExampleDS\" enabled=\"true\" use-java-context=\"true\" statistics-enabled=\"${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}\">\n                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE<\/connection-url>\n                    <driver>h2<\/driver>\n                    <security>\n                        <user-name>sa<\/user-name>\n                        <password>sa<\/password>\n                    <\/security>\n                <\/datasource>\n                <drivers>\n                    <driver name=\"h2\" module=\"com.h2database.h2\">\n                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource<\/xa-datasource-class>\n                    <\/driver>\n                <\/drivers>\n            <\/datasources>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:deployment-scanner:2.0\">\n            <deployment-scanner path=\"deployments\" relative-to=\"jboss.server.base.dir\" scan-interval=\"5000\" runtime-failure-causes-rollback=\"${jboss.deployment.scanner.rollback.on.failure:false}\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:discovery:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:ee:4.0\">\n            <spec-descriptor-property-replacement>false<\/spec-descriptor-property-replacement>\n            <concurrent>\n                <context-services>\n                    <context-service name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/context\/default\" use-transaction-setup-provider=\"true\"\/>\n                <\/context-services>\n                <managed-thread-factories>\n                    <managed-thread-factory name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/factory\/default\" context-service=\"default\"\/>\n                <\/managed-thread-factories>\n                <managed-executor-services>\n                    <managed-executor-service name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/executor\/default\" context-service=\"default\" hung-task-threshold=\"60000\" keepalive-time=\"5000\"\/>\n                <\/managed-executor-services>\n                <managed-scheduled-executor-services>\n                    <managed-scheduled-executor-service name=\"default\" jndi-name=\"java:jboss\/ee\/concurrency\/scheduler\/default\" context-service=\"default\" hung-task-threshold=\"60000\" keepalive-time=\"3000\"\/>\n                <\/managed-scheduled-executor-services>\n            <\/concurrent>\n            <default-bindings context-service=\"java:jboss\/ee\/concurrency\/context\/default\" datasource=\"java:jboss\/datasources\/ExampleDS\" managed-executor-service=\"java:jboss\/ee\/concurrency\/executor\/default\" managed-scheduled-executor-service=\"java:jboss\/ee\/concurrency\/scheduler\/default\" managed-thread-factory=\"java:jboss\/ee\/concurrency\/factory\/default\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:ee-security:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:ejb3:5.0\">\n            <session-bean>\n                <stateless>\n                    <bean-instance-pool-ref pool-name=\"slsb-strict-max-pool\"\/>\n                <\/stateless>\n                <stateful default-access-timeout=\"5000\" cache-ref=\"simple\" passivation-disabled-cache-ref=\"simple\"\/>\n                <singleton default-access-timeout=\"5000\"\/>\n            <\/session-bean>\n            <pools>\n                <bean-instance-pools>\n                    <strict-max-pool name=\"mdb-strict-max-pool\" derive-size=\"from-cpu-count\" instance-acquisition-timeout=\"5\" instance-acquisition-timeout-unit=\"MINUTES\"\/>\n                    <strict-max-pool name=\"slsb-strict-max-pool\" derive-size=\"from-worker-pools\" instance-acquisition-timeout=\"5\" instance-acquisition-timeout-unit=\"MINUTES\"\/>\n                <\/bean-instance-pools>\n            <\/pools>\n            <caches>\n                <cache name=\"simple\"\/>\n                <cache name=\"distributable\" passivation-store-ref=\"infinispan\" aliases=\"passivating clustered\"\/>\n            <\/caches>\n            <passivation-stores>\n                <passivation-store name=\"infinispan\" cache-container=\"ejb\" max-size=\"10000\"\/>\n            <\/passivation-stores>\n            <async thread-pool-name=\"default\"\/>\n            <timer-service thread-pool-name=\"default\" default-data-store=\"default-file-store\">\n                <data-stores>\n                    <file-data-store name=\"default-file-store\" path=\"timer-service-data\" relative-to=\"jboss.server.data.dir\"\/>\n                <\/data-stores>\n            <\/timer-service>\n            <remote connector-ref=\"http-remoting-connector\" thread-pool-name=\"default\">\n                <channel-creation-options>\n                    <option name=\"READ_TIMEOUT\" value=\"${prop.remoting-connector.read.timeout:20}\" type=\"xnio\"\/>\n                    <option name=\"MAX_OUTBOUND_MESSAGES\" value=\"1234\" type=\"remoting\"\/>\n                <\/channel-creation-options>\n            <\/remote>\n            <thread-pools>\n                <thread-pool name=\"default\">\n                    <max-threads count=\"10\"\/>\n                    <keepalive-time time=\"100\" unit=\"milliseconds\"\/>\n                <\/thread-pool>\n            <\/thread-pools>\n            <default-security-domain value=\"other\"\/>\n            <default-missing-method-permissions-deny-access value=\"true\"\/>\n            <statistics enabled=\"${wildfly.ejb3.statistics-enabled:${wildfly.statistics-enabled:false}}\"\/>\n            <log-system-exceptions value=\"true\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:wildfly:elytron:6.0\" final-providers=\"combined-providers\" disallowed-providers=\"OracleUcrypto\">\n            <providers>\n                <aggregate-providers name=\"combined-providers\">\n                    <providers name=\"elytron\"\/>\n                    <providers name=\"openssl\"\/>\n                <\/aggregate-providers>\n                <provider-loader name=\"elytron\" module=\"org.wildfly.security.elytron\"\/>\n                <provider-loader name=\"openssl\" module=\"org.wildfly.openssl\"\/>\n            <\/providers>\n            <audit-logging>\n                <file-audit-log name=\"local-audit\" path=\"audit.log\" relative-to=\"jboss.server.log.dir\" format=\"JSON\"\/>\n            <\/audit-logging>\n            <security-domains>\n                <security-domain name=\"ApplicationDomain\" default-realm=\"ApplicationRealm\" permission-mapper=\"default-permission-mapper\">\n                    <realm name=\"ApplicationRealm\" role-decoder=\"groups-to-roles\"\/>\n                    <realm name=\"local\"\/>\n                <\/security-domain>\n                <security-domain name=\"ManagementDomain\" default-realm=\"ManagementRealm\" permission-mapper=\"default-permission-mapper\">\n                    <realm name=\"ManagementRealm\" role-decoder=\"groups-to-roles\"\/>\n                    <realm name=\"local\" role-mapper=\"super-user-mapper\"\/>\n                <\/security-domain>\n            <\/security-domains>\n            <security-realms>\n                <identity-realm name=\"local\" identity=\"$local\"\/>\n                <properties-realm name=\"ApplicationRealm\">\n                    <users-properties path=\"application-users.properties\" relative-to=\"jboss.server.config.dir\" digest-realm-name=\"ApplicationRealm\"\/>\n                    <groups-properties path=\"application-roles.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/properties-realm>\n                <properties-realm name=\"ManagementRealm\">\n                    <users-properties path=\"mgmt-users.properties\" relative-to=\"jboss.server.config.dir\" digest-realm-name=\"ManagementRealm\"\/>\n                    <groups-properties path=\"mgmt-groups.properties\" relative-to=\"jboss.server.config.dir\"\/>\n                <\/properties-realm>\n            <\/security-realms>\n            <mappers>\n                <simple-permission-mapper name=\"default-permission-mapper\" mapping-mode=\"first\">\n                    <permission-mapping>\n                        <principal name=\"anonymous\"\/>\n                        <permission-set name=\"default-permissions\"\/>\n                    <\/permission-mapping>\n                    <permission-mapping match-all=\"true\">\n                        <permission-set name=\"login-permission\"\/>\n                        <permission-set name=\"default-permissions\"\/>\n                    <\/permission-mapping>\n                <\/simple-permission-mapper>\n                <constant-realm-mapper name=\"local\" realm-name=\"local\"\/>\n                <simple-role-decoder name=\"groups-to-roles\" attribute=\"groups\"\/>\n                <constant-role-mapper name=\"super-user-mapper\">\n                    <role name=\"SuperUser\"\/>\n                <\/constant-role-mapper>\n            <\/mappers>\n            <permission-sets>\n                <permission-set name=\"login-permission\">\n                    <permission class-name=\"org.wildfly.security.auth.permission.LoginPermission\"\/>\n                <\/permission-set>\n                <permission-set name=\"default-permissions\">\n                    <permission class-name=\"org.wildfly.extension.batch.jberet.deployment.BatchPermission\" module=\"org.wildfly.extension.batch.jberet\" target-name=\"*\"\/>\n                    <permission class-name=\"org.wildfly.transaction.client.RemoteTransactionPermission\" module=\"org.wildfly.transaction.client\"\/>\n                    <permission class-name=\"org.jboss.ejb.client.RemoteEJBPermission\" module=\"org.jboss.ejb-client\"\/>\n                <\/permission-set>\n            <\/permission-sets>\n            <http>\n                <http-authentication-factory name=\"management-http-authentication\" security-domain=\"ManagementDomain\" http-server-mechanism-factory=\"global\">\n                    <mechanism-configuration>\n                        <mechanism mechanism-name=\"DIGEST\">\n                            <mechanism-realm realm-name=\"ManagementRealm\"\/>\n                        <\/mechanism>\n                    <\/mechanism-configuration>\n                <\/http-authentication-factory>\n                <provider-http-server-mechanism-factory name=\"global\"\/>\n            <\/http>\n            <sasl>\n                <sasl-authentication-factory name=\"application-sasl-authentication\" sasl-server-factory=\"configured\" security-domain=\"ApplicationDomain\">\n                    <mechanism-configuration>\n                        <mechanism mechanism-name=\"JBOSS-LOCAL-USER\" realm-mapper=\"local\"\/>\n                        <mechanism mechanism-name=\"DIGEST-MD5\">\n                            <mechanism-realm realm-name=\"ApplicationRealm\"\/>\n                        <\/mechanism>\n                    <\/mechanism-configuration>\n                <\/sasl-authentication-factory>\n                <sasl-authentication-factory name=\"management-sasl-authentication\" sasl-server-factory=\"configured\" security-domain=\"ManagementDomain\">\n                    <mechanism-configuration>\n                        <mechanism mechanism-name=\"JBOSS-LOCAL-USER\" realm-mapper=\"local\"\/>\n                        <mechanism mechanism-name=\"DIGEST-MD5\">\n                            <mechanism-realm realm-name=\"ManagementRealm\"\/>\n                        <\/mechanism>\n                    <\/mechanism-configuration>\n                <\/sasl-authentication-factory>\n                <configurable-sasl-server-factory name=\"configured\" sasl-server-factory=\"elytron\">\n                    <properties>\n                        <property name=\"wildfly.sasl.local-user.default-user\" value=\"$local\"\/>\n                    <\/properties>\n                <\/configurable-sasl-server-factory>\n                <mechanism-provider-filtering-sasl-server-factory name=\"elytron\" sasl-server-factory=\"global\">\n                    <filters>\n                        <filter provider-name=\"WildFlyElytron\"\/>\n                    <\/filters>\n                <\/mechanism-provider-filtering-sasl-server-factory>\n                <provider-sasl-server-factory name=\"global\"\/>\n            <\/sasl>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:infinispan:8.0\">\n            <cache-container name=\"server\" default-cache=\"default\" module=\"org.wildfly.clustering.server\">\n                <local-cache name=\"default\">\n                    <transaction mode=\"BATCH\"\/>\n                <\/local-cache>\n            <\/cache-container>\n            <cache-container name=\"web\" default-cache=\"passivation\" module=\"org.wildfly.clustering.web.infinispan\">\n                <local-cache name=\"passivation\">\n                    <locking isolation=\"REPEATABLE_READ\"\/>\n                    <transaction mode=\"BATCH\"\/>\n                    <file-store passivation=\"true\" purge=\"false\"\/>\n                <\/local-cache>\n            <\/cache-container>\n            <cache-container name=\"ejb\" aliases=\"sfsb\" default-cache=\"passivation\" module=\"org.wildfly.clustering.ejb.infinispan\">\n                <local-cache name=\"passivation\">\n                    <locking isolation=\"REPEATABLE_READ\"\/>\n                    <transaction mode=\"BATCH\"\/>\n                    <file-store passivation=\"true\" purge=\"false\"\/>\n                <\/local-cache>\n            <\/cache-container>\n            <cache-container name=\"hibernate\" module=\"org.infinispan.hibernate-cache\">\n                <local-cache name=\"entity\">\n                    <object-memory size=\"10000\"\/>\n                    <expiration max-idle=\"100000\"\/>\n                <\/local-cache>\n                <local-cache name=\"local-query\">\n                    <object-memory size=\"10000\"\/>\n                    <expiration max-idle=\"100000\"\/>\n                <\/local-cache>\n                <local-cache name=\"timestamps\"\/>\n            <\/cache-container>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:io:3.0\">\n            <worker name=\"default\"\/>\n            <buffer-pool name=\"default\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jaxrs:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:jca:5.0\">\n            <archive-validation enabled=\"true\" fail-on-error=\"true\" fail-on-warn=\"false\"\/>\n            <bean-validation enabled=\"true\"\/>\n            <default-workmanager>\n                <short-running-threads>\n                    <core-threads count=\"50\"\/>\n                    <queue-length count=\"50\"\/>\n                    <max-threads count=\"50\"\/>\n                    <keepalive-time time=\"10\" unit=\"seconds\"\/>\n                <\/short-running-threads>\n                <long-running-threads>\n                    <core-threads count=\"50\"\/>\n                    <queue-length count=\"50\"\/>\n                    <max-threads count=\"50\"\/>\n                    <keepalive-time time=\"10\" unit=\"seconds\"\/>\n                <\/long-running-threads>\n            <\/default-workmanager>\n            <cached-connection-manager\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jdr:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:jmx:1.3\">\n            <expose-resolved-model\/>\n            <expose-expression-model\/>\n            <remoting-connector\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jpa:1.1\">\n            <jpa default-datasource=\"\" default-extended-persistence-inheritance=\"DEEP\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:jsf:1.1\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:mail:3.0\">\n            <mail-session name=\"default\" jndi-name=\"java:jboss\/mail\/Default\">\n                <smtp-server outbound-socket-binding-ref=\"mail-smtp\"\/>\n            <\/mail-session>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:wildfly:microprofile-config-smallrye:1.0\"\/>\n        <subsystem xmlns=\"urn:wildfly:microprofile-health-smallrye:1.0\" security-enabled=\"false\"\/>\n        <subsystem xmlns=\"urn:wildfly:microprofile-metrics-smallrye:2.0\" security-enabled=\"false\" exposed-subsystems=\"*\" prefix=\"${wildfly.metrics.prefix:wildfly}\"\/>\n        <subsystem xmlns=\"urn:wildfly:microprofile-opentracing-smallrye:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:naming:2.0\">\n            <remote-naming\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:pojo:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:remoting:4.0\">\n            <http-connector name=\"http-remoting-connector\" connector-ref=\"default\" security-realm=\"ApplicationRealm\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:request-controller:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:resource-adapters:5.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:sar:1.0\"\/>\n        <subsystem xmlns=\"urn:jboss:domain:security:2.0\">\n            <security-domains>\n                <security-domain name=\"other\" cache-type=\"default\">\n                    <authentication>\n                        <login-module code=\"Remoting\" flag=\"optional\">\n                            <module-option name=\"password-stacking\" value=\"useFirstPass\"\/>\n                        <\/login-module>\n                        <login-module code=\"RealmDirect\" flag=\"required\">\n                            <module-option name=\"password-stacking\" value=\"useFirstPass\"\/>\n                        <\/login-module>\n                    <\/authentication>\n                <\/security-domain>\n                <security-domain name=\"jboss-web-policy\" cache-type=\"default\">\n                    <authorization>\n                        <policy-module code=\"Delegating\" flag=\"required\"\/>\n                    <\/authorization>\n                <\/security-domain>\n                <security-domain name=\"jaspitest\" cache-type=\"default\">\n                    <authentication-jaspi>\n                        <login-module-stack name=\"dummy\">\n                            <login-module code=\"Dummy\" flag=\"optional\"\/>\n                        <\/login-module-stack>\n                        <auth-module code=\"Dummy\"\/>\n                    <\/authentication-jaspi>\n                <\/security-domain>\n                <security-domain name=\"jboss-ejb-policy\" cache-type=\"default\">\n                    <authorization>\n                        <policy-module code=\"Delegating\" flag=\"required\"\/>\n                    <\/authorization>\n                <\/security-domain>\n            <\/security-domains>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:security-manager:1.0\">\n            <deployment-permissions>\n                <maximum-set>\n                    <permission class=\"java.security.AllPermission\"\/>\n                <\/maximum-set>\n            <\/deployment-permissions>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:transactions:5.0\">\n            <core-environment node-identifier=\"${jboss.tx.node.id:1}\">\n                <process-id>\n                    <uuid\/>\n                <\/process-id>\n            <\/core-environment>\n            <recovery-environment socket-binding=\"txn-recovery-environment\" status-socket-binding=\"txn-status-manager\"\/>\n            <coordinator-environment statistics-enabled=\"${wildfly.transactions.statistics-enabled:${wildfly.statistics-enabled:false}}\"\/>\n            <object-store path=\"tx-object-store\" relative-to=\"jboss.server.data.dir\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:undertow:8.0\" default-server=\"default-server\" default-virtual-host=\"default-host\" default-servlet-container=\"default\" default-security-domain=\"other\" statistics-enabled=\"${wildfly.undertow.statistics-enabled:${wildfly.statistics-enabled:false}}\">\n            <buffer-cache name=\"default\"\/>\n            <server name=\"default-server\">\n                <http-listener name=\"default\" socket-binding=\"http\" redirect-socket=\"https\" enable-http2=\"true\"\/>\n                <https-listener name=\"https\" socket-binding=\"https\" security-realm=\"ApplicationRealm\" enable-http2=\"true\"\/>\n                <host name=\"default-host\" alias=\"localhost\">\n                    <location name=\"\/\" handler=\"welcome-content\"\/>\n                    <http-invoker security-realm=\"ApplicationRealm\"\/>\n                <\/host>\n            <\/server>\n            <servlet-container name=\"default\">\n                <jsp-config\/>\n                <websockets\/>\n            <\/servlet-container>\n            <handlers>\n                <file name=\"welcome-content\" path=\"${jboss.home.dir}\/welcome-content\"\/>\n            <\/handlers>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:webservices:2.0\" statistics-enabled=\"${wildfly.webservices.statistics-enabled:${wildfly.statistics-enabled:false}}\">\n            <wsdl-host>${jboss.bind.address:127.0.0.1}<\/wsdl-host>\n            <endpoint-config name=\"Standard-Endpoint-Config\"\/>\n            <endpoint-config name=\"Recording-Endpoint-Config\">\n                <pre-handler-chain name=\"recording-handlers\" protocol-bindings=\"##SOAP11_HTTP ##SOAP11_HTTP_MTOM ##SOAP12_HTTP ##SOAP12_HTTP_MTOM\">\n                    <handler name=\"RecordingHandler\" class=\"org.jboss.ws.common.invocation.RecordingServerHandler\"\/>\n                <\/pre-handler-chain>\n            <\/endpoint-config>\n            <client-config name=\"Standard-Client-Config\"\/>\n        <\/subsystem>\n        <subsystem xmlns=\"urn:jboss:domain:weld:4.0\"\/>\n    <\/profile>\n    <interfaces>\n        <interface name=\"management\">\n            <any-address\/>\n        <\/interface>\n        <interface name=\"public\">\n            <any-address\/>\n        <\/interface>\n    <\/interfaces>\n    <socket-binding-group name=\"standard-sockets\" default-interface=\"public\" port-offset=\"${jboss.socket.binding.port-offset:0}\">\n        <socket-binding name=\"management-http\" interface=\"management\" port=\"${jboss.management.http.port:9990}\"\/>\n        <socket-binding name=\"management-https\" interface=\"management\" port=\"${jboss.management.https.port:9993}\"\/>\n        <socket-binding name=\"ajp\" port=\"${jboss.ajp.port:8009}\"\/>\n        <socket-binding name=\"http\" port=\"${jboss.http.port:8080}\"\/>\n        <socket-binding name=\"https\" port=\"${jboss.https.port:8443}\"\/>\n        <socket-binding name=\"txn-recovery-environment\" port=\"4712\"\/>\n        <socket-binding name=\"txn-status-manager\" port=\"4713\"\/>\n        <outbound-socket-binding name=\"mail-smtp\">\n            <remote-destination host=\"localhost\" port=\"25\"\/>\n        <\/outbound-socket-binding>\n    <\/socket-binding-group>\n<\/server>\nEOF'",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+
+                           ],
+                           "description":"",
+                           "message_list":[
+
+                           ],
+                           "name":"InstallJBoss",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_service",
+                              "name":"JBoss"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[
+
+                           ]
+                        },
+                        {
+                           "attrs":{
+                              "command_line_args":"",
+                              "exit_status":[
+
+                              ],
+                              "login_credential_local_reference":{
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\nsudo yum install -y java-1.8.0-openjdk-devel\nsudo ln -s \/usr\/lib\/jvm\/java-1.8.0-openjdk-*\/ \/usr\/jdk8\nexport JAVA_HOME=\/usr\/jdk8",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+
+                           ],
+                           "description":"",
+                           "message_list":[
+
+                           ],
+                           "name":"InstallOpenJDK",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_service",
+                              "name":"JBoss"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[
+
+                           ]
+                        },
+                        {
+                           "attrs":{
+                              "command_line_args":"",
+                              "exit_status":[
+
+                              ],
+                              "login_credential_local_reference":{
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\nsudo yum update -y\nsudo yum install -y unzip wget curl vim\nsudo yum clean packages\nsudo yum clean headers\nsudo yum clean metadata\nsudo yum clean all\n",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+
+                           ],
+                           "description":"",
+                           "message_list":[
+
+                           ],
+                           "name":"InstallPackages",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_service",
+                              "name":"JBoss"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[
+
+                           ]
+                        },
+                        {
+                           "attrs":{
+                              "command_line_args":"",
+                              "exit_status":[
+
+                              ],
+                              "login_credential_local_reference":{
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\nsudo \/opt\/wildfly\/bin\/customUser.sh '@@{JBOSS_USER}@@' '@@{JBOSS_USER_PASSWORD}@@'\n\nsudo chown wildfly:wildfly \/opt\/wildfly\/standalone\/configuration\/standalone.xml\n\nsudo systemctl daemon-reload\nsudo systemctl start wildfly\nsudo systemctl enable wildfly",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+
+                           ],
+                           "description":"",
+                           "message_list":[
+
+                           ],
+                           "name":"SetingsJBoss",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_service",
+                              "name":"JBoss"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[
+
+                           ]
+                        },
+                        {
+                           "attrs":{
+                              "command_line_args":"",
+                              "exit_status":[
+
+                              ],
+                              "login_credential_local_reference":{
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\ncd ~\/.ssh\/\n\necho '@@{AUTHORIZED_KEY}@@' >> authorized_keys\nsudo chmod 600 authorized_keys",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+
+                           ],
+                           "description":"",
+                           "message_list":[
+
+                           ],
+                           "name":"SettingsAutoKey",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_service",
+                              "name":"JBoss"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[
+
+                           ]
+                        }
+                     ],
+                     "variable_list":[
+
+                     ]
+                  },
+                  "type":"",
+                  "uninstall_runbook":{
+                     "description":"",
+                     "main_task_local_reference":{
+                        "kind":"app_task",
+                        "name":"afc2428c_dag"
+                     },
+                     "message_list":[
+
+                     ],
+                     "name":"4111f321_runbook",
+                     "state":"ACTIVE",
+                     "task_definition_list":[
+                        {
+                           "attrs":{
+                              "edges":[
+
+                              ],
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[
+
+                           ],
+                           "description":"",
+                           "message_list":[
+
+                           ],
+                           "name":"afc2428c_dag",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{
+                              "kind":"app_package",
+                              "name":"Package1"
+                           },
+                           "timeout_secs":"0",
+                           "type":"DAG",
+                           "variable_list":[
+
+                           ]
+                        }
+                     ],
+                     "variable_list":[
+
+                     ]
+                  }
+               },
+               "service_local_reference_list":[
+                  {
+                     "kind":"app_service",
+                     "name":"JBoss"
+                  }
+               ],
+               "type":"DEB",
+               "variable_list":[
+
+               ],
+               "version":""
+            }
+         ],
+         "published_service_definition_list":[
+
+         ],
+         "service_definition_list":[
+            {
+               "action_list":[
+                  {
+                     "critical":false,
+                     "description":"System action for creating an application",
+                     "name":"action_create",
+                     "runbook":{
+                        "description":"",
+                        "main_task_local_reference":{
+                           "kind":"app_task",
+                           "name":"545f5216_dag"
+                        },
+                        "name":"5b823b92_runbook",
+                        "task_definition_list":[
+                           {
+                              "attrs":{
+                                 "edges":[
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[
+
+                              ],
+                              "description":"",
+                              "name":"545f5216_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{
+                                 "kind":"app_service",
+                                 "name":"JBoss"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {
+                     "critical":false,
+                     "description":"System action for deleting an application. Deletes created VMs as well",
+                     "name":"action_delete",
+                     "runbook":{
+                        "description":"",
+                        "main_task_local_reference":{
+                           "kind":"app_task",
+                           "name":"bb9a8ef2_dag"
+                        },
+                        "name":"0c90d9cb_runbook",
+                        "task_definition_list":[
+                           {
+                              "attrs":{
+                                 "edges":[
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[
+
+                              ],
+                              "description":"",
+                              "name":"bb9a8ef2_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{
+                                 "kind":"app_service",
+                                 "name":"JBoss"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {
+                     "critical":false,
+                     "description":"System action for restarting an application",
+                     "name":"action_restart",
+                     "runbook":{
+                        "description":"",
+                        "main_task_local_reference":{
+                           "kind":"app_task",
+                           "name":"d359c0ba_dag"
+                        },
+                        "name":"31827abf_runbook",
+                        "task_definition_list":[
+                           {
+                              "attrs":{
+                                 "edges":[
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[
+
+                              ],
+                              "description":"",
+                              "name":"d359c0ba_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{
+                                 "kind":"app_service",
+                                 "name":"JBoss"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {
+                     "critical":false,
+                     "description":"System action for starting an application",
+                     "name":"action_start",
+                     "runbook":{
+                        "description":"",
+                        "main_task_local_reference":{
+                           "kind":"app_task",
+                           "name":"180ecb93_dag"
+                        },
+                        "name":"c83a80f6_runbook",
+                        "task_definition_list":[
+                           {
+                              "attrs":{
+                                 "edges":[
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[
+
+                              ],
+                              "description":"",
+                              "name":"180ecb93_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{
+                                 "kind":"app_service",
+                                 "name":"JBoss"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {
+                     "critical":false,
+                     "description":"System action for stopping an application",
+                     "name":"action_stop",
+                     "runbook":{
+                        "description":"",
+                        "main_task_local_reference":{
+                           "kind":"app_task",
+                           "name":"317e75ff_dag"
+                        },
+                        "name":"df77c3b0_runbook",
+                        "task_definition_list":[
+                           {
+                              "attrs":{
+                                 "edges":[
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[
+
+                              ],
+                              "description":"",
+                              "name":"317e75ff_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{
+                                 "kind":"app_service",
+                                 "name":"JBoss"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[
+
+                        ]
+                     },
+                     "type":"system"
+                  }
+               ],
+               "depends_on_list":[
+
+               ],
+               "description":"",
+               "name":"JBoss",
+               "port_list":[
+
+               ],
+               "singleton":false,
+               "tier":"",
+               "variable_list":[
+
+               ]
+            }
+         ],
+         "substrate_definition_list":[
+            {
+               "action_list":[
+
+               ],
+               "create_spec":{
+                  "availability_zone_reference":null,
+                  "backup_policy":null,
+                  "categories":"",
+                  "cluster_reference":null,
+                  "name":"JbossMachine",
+                  "resources":{
+                     "boot_config":{
+                        "boot_device":{
+                           "disk_address":{
+                              "adapter_type":"SCSI",
+                              "device_index":0,
+                              "type":""
+                           },
+                           "type":""
+                        },
+                        "mac_address":"",
+                        "type":""
+                     },
+                     "disk_list":[
+                        {
+                           "data_source_reference":{
+                              "kind":"image",
+                              "name":"acs-centos",
+                              "type":"",
+                              "uuid":"2defcfd4-132a-452c-9143-833751984e18"
+                           },
+                           "device_properties":{
+                              "device_type":"DISK",
+                              "disk_address":{
+                                 "adapter_type":"SCSI",
+                                 "device_index":0,
+                                 "type":""
+                              },
+                              "type":""
+                           },
+                           "disk_size_mib":0,
+                           "type":"",
+                           "volume_group_reference":null
+                        }
+                     ],
+                     "gpu_list":[
+
+                     ],
+                     "guest_customization":{
+                        "cloud_init":{
+                           "meta_data":"",
+                           "type":"",
+                           "user_data":"#cloud-config\nusers:\n  - name: centos\n    ssh-authorized-keys:\n      - @@{INSTANCE_PUBLIC_KEY}@@\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']"
+                        },
+                        "sysprep":null,
+                        "type":""
+                     },
+                     "guest_tools":null,
+                     "hardware_clock_timezone":"",
+                     "memory_size_mib":4096,
+                     "nic_list":[
+                        {
+                           "ip_endpoint_list":[
+
+                           ],
+                           "mac_address":"",
+                           "network_function_chain_reference":null,
+                           "network_function_nic_type":"INGRESS",
+                           "nic_type":"NORMAL_NIC",
+                           "subnet_reference":{
+                              "kind":"subnet",
+                              "name":"",
+                              "type":"",
+                              "uuid":"4aa08188-f780-4b00-87df-b0ebdc96e0a3"
+                           },
+                           "type":""
+                        }
+                     ],
+                     "num_sockets":2,
+                     "num_vcpus_per_socket":1,
+                     "parent_reference":null,
+                     "power_state":"ON",
+                     "serial_port_list":[
+
+                     ],
+                     "type":""
                   },
                   "type":""
-                },
-                "mac_address":"",
-                "type":""
-              },
-              "disk_list":[
-                {
-                  "data_source_reference":{
-                    "kind":"image",
-                    "name":"acs-centos",
-                    "type":"",
-                    "uuid":"2defcfd4-132a-452c-9143-833751984e18"
-                  },
-                  "device_properties":{
-                    "device_type":"DISK",
-                    "disk_address":{
-                      "adapter_type":"SCSI",
-                      "device_index":0,
-                      "type":""
-                    },
-                    "type":""
-                  },
-                  "disk_size_mib":0,
-                  "type":"",
-                  "volume_group_reference":null
-                }
-              ],
-              "gpu_list":[
+               },
+               "description":"",
+               "editables":{
+                  "create_spec":{
+                     "resources":{
+                        "disk_list":{
 
-              ],
-              "guest_customization":{
-                "cloud_init":{
-                  "meta_data":"",
-                  "type":"",
-                  "user_data":"#cloud-config\nusers:\n  - name: centos\n    ssh-authorized-keys:\n      - @@{INSTANCE_PUBLIC_KEY}@@\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']"
-                },
-                "sysprep":null,
-                "type":""
-              },
-              "guest_tools":null,
-              "hardware_clock_timezone":"",
-              "memory_size_mib":4096,
-              "nic_list":[
-                {
-                  "ip_endpoint_list":[
+                        },
+                        "nic_list":{
 
-                  ],
-                  "mac_address":"",
-                  "network_function_chain_reference":null,
-                  "network_function_nic_type":"INGRESS",
-                  "nic_type":"NORMAL_NIC",
-                  "subnet_reference":{
-                    "kind":"subnet",
-                    "name":"",
-                    "type":"",
-                    "uuid":"4aa08188-f780-4b00-87df-b0ebdc96e0a3"
-                  },
-                  "type":""
-                }
-              ],
-              "num_sockets":2,
-              "num_vcpus_per_socket":1,
-              "parent_reference":null,
-              "power_state":"ON",
-              "serial_port_list":[
+                        },
+                        "serial_port_list":{
 
-              ],
-              "type":""
-            },
-            "type":""
-          },
-          "description":"",
-          "editables":{
-            "create_spec":{
-              "resources":{
-                "disk_list":{
+                        }
+                     }
+                  }
+               },
+               "name":"VM_JBOSS",
+               "os_type":"Linux",
+               "readiness_probe":{
+                  "address":"@@{platform.status.resources.nic_list[0].ip_endpoint_list[0].ip}@@",
+                  "connection_port":22,
+                  "connection_type":"SSH",
+                  "delay_secs":"60",
+                  "disable_readiness_probe":false
+               },
+               "type":"AHV_VM",
+               "variable_list":[
 
-                },
-                "nic_list":{
-
-                },
-                "serial_port_list":{
-
-                }
-              }
+               ]
             }
-          },
-          "name":"VM_JBOSS",
-          "os_type":"Linux",
-          "readiness_probe":{
-            "address":"@@{platform.status.resources.nic_list[0].ip_endpoint_list[0].ip}@@",
-            "connection_port":22,
-            "connection_type":"SSH",
-            "delay_secs":"60",
-            "disable_readiness_probe":false
-          },
-          "type":"AHV_VM",
-          "variable_list":[
+         ],
+         "type":"USER"
+      }
+   },
+   "status":{
 
-          ]
-        }
-      ],
-      "type":"USER"
-    }
-  },
-  "status":{
-
-  }
+   }
 }

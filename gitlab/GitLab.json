@@ -1,724 +1,724 @@
-{
-  "api_version":"3.0",
-  "metadata":{
-    "creation_time":"1557308238450572",
-    "kind":"blueprint",
-    "last_update_time":"1559741147246700",
-    "name":"GitLab",
-    "spec_version":12
-  },
-  "spec":{
-    "description":"Gitlab-ce 11.10.4-ce",
-    "name":"GitLab",
-    "resources":{
-      "app_profile_list":[
-        {
-          "action_list":[
+{  
+   "api_version":"3.0",
+   "metadata":{  
+      "creation_time":"1557308238450572",
+      "kind":"blueprint",
+      "last_update_time":"1559741147246700",
+      "name":"GitLab",
+      "spec_version":12
+   },
+   "spec":{  
+      "description":"Gitlab-ce 11.10.4-ce",
+      "name":"GitLab",
+      "resources":{  
+         "app_profile_list":[  
+            {  
+               "action_list":[  
 
-          ],
-          "deployment_create_list":[
-            {
-              "action_list":[
+               ],
+               "deployment_create_list":[  
+                  {  
+                     "action_list":[  
 
-              ],
-              "depends_on_list":[
+                     ],
+                     "depends_on_list":[  
 
-              ],
-              "description":"",
-              "max_replicas":"1",
-              "min_replicas":"1",
-              "name":"6e337ae8_deployment",
-              "package_local_reference_list":[
-                {
-                  "kind":"app_package",
-                  "name":"Package1"
-                }
-              ],
-              "published_service_local_reference_list":[
+                     ],
+                     "description":"",
+                     "max_replicas":"1",
+                     "min_replicas":"1",
+                     "name":"6e337ae8_deployment",
+                     "package_local_reference_list":[  
+                        {  
+                           "kind":"app_package",
+                           "name":"Package1"
+                        }
+                     ],
+                     "published_service_local_reference_list":[  
 
-              ],
-              "substrate_local_reference":{
-                "kind":"app_substrate",
-                "name":"VM_GITLAB"
-              },
-              "type":"GREENFIELD",
-              "variable_list":[
+                     ],
+                     "substrate_local_reference":{  
+                        "kind":"app_substrate",
+                        "name":"VM_GITLAB"
+                     },
+                     "type":"GREENFIELD",
+                     "variable_list":[  
 
-              ]
-            }
-          ],
-          "description":"",
-          "name":"Default",
-          "variable_list":[
-            {
-              "attrs":{
-                "is_secret_modified":false,
-                "secret_reference":{
+                     ]
+                  }
+               ],
+               "description":"",
+               "name":"Default",
+               "variable_list":[  
+                  {  
+                     "attrs":{  
+                        "is_secret_modified":false,
+                        "secret_reference":{  
 
-                },
-                "type":""
-              },
-              "description":"",
-              "editables":{
-                "value":true
-              },
-              "label":"",
-              "name":"AUTHORIZED_KEY",
-              "type":"SECRET",
-              "val_type":"STRING",
-              "value":""
-            },
-            {
-              "attrs":{
-                "is_secret_modified":false,
-                "secret_reference":{
-
-                },
-                "type":""
-              },
-              "description":"",
-              "label":"",
-              "name":"INSTANCE_PUBLIC_KEY",
-              "type":"SECRET",
-              "val_type":"STRING",
-              "value":""
-            }
-          ]
-        }
-      ],
-      "client_attrs":{
-        "6e337ae8_deployment":{
-          "x":656.9859719515,
-          "y":344.0503327348
-        }
-      },
-      "credential_definition_list":[
-        {
-          "description":"",
-          "name":"centos",
-          "secret":{
-            "attrs":{
-              "is_secret_modified":false,
-              "secret_reference":{
-
-              }
-            }
-          },
-          "type":"KEY",
-          "username":"centos"
-        }
-      ],
-      "default_credential_local_reference":{
-        "kind":"app_credential",
-        "name":"centos"
-      },
-      "package_definition_list":[
-        {
-          "action_list":[
-
-          ],
-          "description":"",
-          "name":"Package1",
-          "options":{
-            "install_runbook":{
-              "description":"",
-              "main_task_local_reference":{
-                "kind":"app_task",
-                "name":"340b03d2_dag"
-              },
-              "message_list":[
-
-              ],
-              "name":"3afec3ee_runbook",
-              "state":"ACTIVE",
-              "task_definition_list":[
-                {
-                  "attrs":{
-                    "edges":[
-                      {
-                        "edge_type":"user_defined",
-                        "from_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallGitLab"
-                        },
-                        "to_task_reference":{
-                          "kind":"app_task",
-                          "name":"SettingsGitlab"
                         },
                         "type":""
-                      },
-                      {
-                        "edge_type":"user_defined",
-                        "from_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallPackages"
-                        },
-                        "to_task_reference":{
-                          "kind":"app_task",
-                          "name":"InstallGitLab"
+                     },
+                     "description":"",
+                     "editables":{  
+                        "value":true
+                     },
+                     "label":"",
+                     "name":"AUTHORIZED_KEY",
+                     "type":"SECRET",
+                     "val_type":"STRING",
+                     "value":""
+                  },
+                  {  
+                     "attrs":{  
+                        "is_secret_modified":false,
+                        "secret_reference":{  
+
                         },
                         "type":""
-                      }
-                    ],
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-                    {
-                      "kind":"app_task",
-                      "name":"InstallGitLab"
-                    },
-                    {
-                      "kind":"app_task",
-                      "name":"InstallPackages"
-                    },
-                    {
-                      "kind":"app_task",
-                      "name":"SettingsGitlab"
-                    }
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"340b03d2_dag",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_package",
-                    "name":"Package1"
-                  },
-                  "timeout_secs":"0",
-                  "type":"DAG",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "login_credential_local_reference":{
-                      "kind":"app_credential",
-                      "name":"centos"
-                    },
-                    "script":"#!\/bin\/bash\nset -ex\n\ncurl https:\/\/packages.gitlab.com\/install\/repositories\/gitlab\/gitlab-ce\/script.rpm.sh | sudo bash\nsudo yum install -y gitlab-ce\n",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"InstallGitLab",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"Gitlab"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "login_credential_local_reference":{
-                      "kind":"app_credential",
-                      "name":"centos"
-                    },
-                    "script":"#!\/bin\/bash\nset -ex\n\nsudo yum install -y curl policycoreutils-python openssh-server wget curl vim curl openssh-clients\n\nsudo systemctl enable sshd\nsudo systemctl start sshd\n\nsudo systemctl enable firewalld\nsudo systemctl start firewalld\nsudo firewall-cmd --permanent --add-service=http\nsudo systemctl reload firewalld\n",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"InstallPackages",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"Gitlab"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                },
-                {
-                  "attrs":{
-                    "command_line_args":"",
-                    "exit_status":[
-
-                    ],
-                    "login_credential_local_reference":{
-                      "kind":"app_credential",
-                      "name":"centos"
-                    },
-                    "script":"#!\/bin\/bash\nset -ex\n\nsudo gitlab-ctl reconfigure\nsudo gitlab-ctl restart\n\ncd ~\/.ssh\/\n\necho '@@{AUTHORIZED_KEY}@@' >> authorized_keys\nsudo chmod 600 authorized_keys\n",
-                    "script_type":"sh",
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"SettingsGitlab",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_service",
-                    "name":"Gitlab"
-                  },
-                  "timeout_secs":"0",
-                  "type":"EXEC",
-                  "variable_list":[
-
-                  ]
-                }
-              ],
-              "variable_list":[
-
-              ]
-            },
-            "type":"",
-            "uninstall_runbook":{
-              "description":"",
-              "main_task_local_reference":{
-                "kind":"app_task",
-                "name":"afc2428c_dag"
-              },
-              "message_list":[
-
-              ],
-              "name":"4111f321_runbook",
-              "state":"ACTIVE",
-              "task_definition_list":[
-                {
-                  "attrs":{
-                    "edges":[
-
-                    ],
-                    "type":""
-                  },
-                  "child_tasks_local_reference_list":[
-
-                  ],
-                  "description":"",
-                  "message_list":[
-
-                  ],
-                  "name":"afc2428c_dag",
-                  "retries":"0",
-                  "state":"ACTIVE",
-                  "target_any_local_reference":{
-                    "kind":"app_package",
-                    "name":"Package1"
-                  },
-                  "timeout_secs":"0",
-                  "type":"DAG",
-                  "variable_list":[
-
-                  ]
-                }
-              ],
-              "variable_list":[
-
-              ]
+                     },
+                     "description":"",
+                     "label":"",
+                     "name":"INSTANCE_PUBLIC_KEY",
+                     "type":"SECRET",
+                     "val_type":"STRING",
+                     "value":""
+                  }
+               ]
             }
-          },
-          "service_local_reference_list":[
-            {
-              "kind":"app_service",
-              "name":"Gitlab"
+         ],
+         "client_attrs":{  
+            "6e337ae8_deployment":{  
+               "x":656.9859719515,
+               "y":344.0503327348
             }
-          ],
-          "type":"DEB",
-          "variable_list":[
+         },
+         "credential_definition_list":[  
+            {  
+               "description":"",
+               "name":"centos",
+               "secret":{  
+                  "attrs":{  
+                     "is_secret_modified":false,
+                     "secret_reference":{  
 
-          ],
-          "version":""
-        }
-      ],
-      "published_service_definition_list":[
-
-      ],
-      "service_definition_list":[
-        {
-          "action_list":[
-            {
-              "critical":false,
-              "description":"System action for creating an application",
-              "name":"action_create",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"545f5216_dag"
-                },
-                "name":"5b823b92_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"545f5216_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"Gitlab"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
+                     }
                   }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for deleting an application. Deletes created VMs as well",
-              "name":"action_delete",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"bb9a8ef2_dag"
-                },
-                "name":"0c90d9cb_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"bb9a8ef2_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"Gitlab"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for restarting an application",
-              "name":"action_restart",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"d359c0ba_dag"
-                },
-                "name":"31827abf_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"d359c0ba_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"Gitlab"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for starting an application",
-              "name":"action_start",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"180ecb93_dag"
-                },
-                "name":"c83a80f6_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"180ecb93_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"Gitlab"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
-            },
-            {
-              "critical":false,
-              "description":"System action for stopping an application",
-              "name":"action_stop",
-              "runbook":{
-                "description":"",
-                "main_task_local_reference":{
-                  "kind":"app_task",
-                  "name":"317e75ff_dag"
-                },
-                "name":"df77c3b0_runbook",
-                "task_definition_list":[
-                  {
-                    "attrs":{
-                      "edges":[
-
-                      ],
-                      "type":""
-                    },
-                    "child_tasks_local_reference_list":[
-
-                    ],
-                    "description":"",
-                    "name":"317e75ff_dag",
-                    "retries":"0",
-                    "target_any_local_reference":{
-                      "kind":"app_service",
-                      "name":"Gitlab"
-                    },
-                    "timeout_secs":"0",
-                    "type":"DAG",
-                    "variable_list":[
-
-                    ]
-                  }
-                ],
-                "variable_list":[
-
-                ]
-              },
-              "type":"system"
+               },
+               "type":"KEY",
+               "username":"centos"
             }
-          ],
-          "depends_on_list":[
+         ],
+         "default_credential_local_reference":{  
+            "kind":"app_credential",
+            "name":"centos"
+         },
+         "package_definition_list":[  
+            {  
+               "action_list":[  
 
-          ],
-          "description":"",
-          "name":"Gitlab",
-          "port_list":[
+               ],
+               "description":"",
+               "name":"Package1",
+               "options":{  
+                  "install_runbook":{  
+                     "description":"",
+                     "main_task_local_reference":{  
+                        "kind":"app_task",
+                        "name":"340b03d2_dag"
+                     },
+                     "message_list":[  
 
-          ],
-          "singleton":false,
-          "tier":"",
-          "variable_list":[
+                     ],
+                     "name":"3afec3ee_runbook",
+                     "state":"ACTIVE",
+                     "task_definition_list":[  
+                        {  
+                           "attrs":{  
+                              "edges":[  
+                                 {  
+                                    "edge_type":"user_defined",
+                                    "from_task_reference":{  
+                                       "kind":"app_task",
+                                       "name":"InstallGitLab"
+                                    },
+                                    "to_task_reference":{  
+                                       "kind":"app_task",
+                                       "name":"SettingsGitlab"
+                                    },
+                                    "type":""
+                                 },
+                                 {  
+                                    "edge_type":"user_defined",
+                                    "from_task_reference":{  
+                                       "kind":"app_task",
+                                       "name":"InstallPackages"
+                                    },
+                                    "to_task_reference":{  
+                                       "kind":"app_task",
+                                       "name":"InstallGitLab"
+                                    },
+                                    "type":""
+                                 }
+                              ],
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[  
+                              {  
+                                 "kind":"app_task",
+                                 "name":"InstallGitLab"
+                              },
+                              {  
+                                 "kind":"app_task",
+                                 "name":"InstallPackages"
+                              },
+                              {  
+                                 "kind":"app_task",
+                                 "name":"SettingsGitlab"
+                              }
+                           ],
+                           "description":"",
+                           "message_list":[  
 
-          ]
-        }
-      ],
-      "substrate_definition_list":[
-        {
-          "action_list":[
+                           ],
+                           "name":"340b03d2_dag",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{  
+                              "kind":"app_package",
+                              "name":"Package1"
+                           },
+                           "timeout_secs":"0",
+                           "type":"DAG",
+                           "variable_list":[  
 
-          ],
-          "create_spec":{
-            "availability_zone_reference":null,
-            "backup_policy":null,
-            "categories":{
-              "AppFamily":"DevOps",
-              "AppType":"Git_Server"
-            },
-            "cluster_reference":null,
-            "name":"GitLabMachine-@@{calm_unique}@@",
-            "resources":{
-              "boot_config":{
-                "boot_device":{
-                  "disk_address":{
-                    "adapter_type":"SCSI",
-                    "device_index":0,
-                    "type":""
+                           ]
+                        },
+                        {  
+                           "attrs":{  
+                              "command_line_args":"",
+                              "exit_status":[  
+
+                              ],
+                              "login_credential_local_reference":{  
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\ncurl https:\/\/packages.gitlab.com\/install\/repositories\/gitlab\/gitlab-ce\/script.rpm.sh | sudo bash\nsudo yum install -y gitlab-ce\n",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[  
+
+                           ],
+                           "description":"",
+                           "message_list":[  
+
+                           ],
+                           "name":"InstallGitLab",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{  
+                              "kind":"app_service",
+                              "name":"Gitlab"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[  
+
+                           ]
+                        },
+                        {  
+                           "attrs":{  
+                              "command_line_args":"",
+                              "exit_status":[  
+
+                              ],
+                              "login_credential_local_reference":{  
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\nsudo yum install -y curl policycoreutils-python openssh-server wget curl vim curl openssh-clients\n\nsudo systemctl enable sshd\nsudo systemctl start sshd\n\nsudo systemctl enable firewalld\nsudo systemctl start firewalld\nsudo firewall-cmd --permanent --add-service=http\nsudo systemctl reload firewalld\n",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[  
+
+                           ],
+                           "description":"",
+                           "message_list":[  
+
+                           ],
+                           "name":"InstallPackages",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{  
+                              "kind":"app_service",
+                              "name":"Gitlab"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[  
+
+                           ]
+                        },
+                        {  
+                           "attrs":{  
+                              "command_line_args":"",
+                              "exit_status":[  
+
+                              ],
+                              "login_credential_local_reference":{  
+                                 "kind":"app_credential",
+                                 "name":"centos"
+                              },
+                              "script":"#!\/bin\/bash\nset -ex\n\nsudo gitlab-ctl reconfigure\nsudo gitlab-ctl restart\n\ncd ~\/.ssh\/\n\necho '@@{AUTHORIZED_KEY}@@' >> authorized_keys\nsudo chmod 600 authorized_keys\n",
+                              "script_type":"sh",
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[  
+
+                           ],
+                           "description":"",
+                           "message_list":[  
+
+                           ],
+                           "name":"SettingsGitlab",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{  
+                              "kind":"app_service",
+                              "name":"Gitlab"
+                           },
+                           "timeout_secs":"0",
+                           "type":"EXEC",
+                           "variable_list":[  
+
+                           ]
+                        }
+                     ],
+                     "variable_list":[  
+
+                     ]
+                  },
+                  "type":"",
+                  "uninstall_runbook":{  
+                     "description":"",
+                     "main_task_local_reference":{  
+                        "kind":"app_task",
+                        "name":"afc2428c_dag"
+                     },
+                     "message_list":[  
+
+                     ],
+                     "name":"4111f321_runbook",
+                     "state":"ACTIVE",
+                     "task_definition_list":[  
+                        {  
+                           "attrs":{  
+                              "edges":[  
+
+                              ],
+                              "type":""
+                           },
+                           "child_tasks_local_reference_list":[  
+
+                           ],
+                           "description":"",
+                           "message_list":[  
+
+                           ],
+                           "name":"afc2428c_dag",
+                           "retries":"0",
+                           "state":"ACTIVE",
+                           "target_any_local_reference":{  
+                              "kind":"app_package",
+                              "name":"Package1"
+                           },
+                           "timeout_secs":"0",
+                           "type":"DAG",
+                           "variable_list":[  
+
+                           ]
+                        }
+                     ],
+                     "variable_list":[  
+
+                     ]
+                  }
+               },
+               "service_local_reference_list":[  
+                  {  
+                     "kind":"app_service",
+                     "name":"Gitlab"
+                  }
+               ],
+               "type":"DEB",
+               "variable_list":[  
+
+               ],
+               "version":""
+            }
+         ],
+         "published_service_definition_list":[  
+
+         ],
+         "service_definition_list":[  
+            {  
+               "action_list":[  
+                  {  
+                     "critical":false,
+                     "description":"System action for creating an application",
+                     "name":"action_create",
+                     "runbook":{  
+                        "description":"",
+                        "main_task_local_reference":{  
+                           "kind":"app_task",
+                           "name":"545f5216_dag"
+                        },
+                        "name":"5b823b92_runbook",
+                        "task_definition_list":[  
+                           {  
+                              "attrs":{  
+                                 "edges":[  
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[  
+
+                              ],
+                              "description":"",
+                              "name":"545f5216_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{  
+                                 "kind":"app_service",
+                                 "name":"Gitlab"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[  
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[  
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {  
+                     "critical":false,
+                     "description":"System action for deleting an application. Deletes created VMs as well",
+                     "name":"action_delete",
+                     "runbook":{  
+                        "description":"",
+                        "main_task_local_reference":{  
+                           "kind":"app_task",
+                           "name":"bb9a8ef2_dag"
+                        },
+                        "name":"0c90d9cb_runbook",
+                        "task_definition_list":[  
+                           {  
+                              "attrs":{  
+                                 "edges":[  
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[  
+
+                              ],
+                              "description":"",
+                              "name":"bb9a8ef2_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{  
+                                 "kind":"app_service",
+                                 "name":"Gitlab"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[  
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[  
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {  
+                     "critical":false,
+                     "description":"System action for restarting an application",
+                     "name":"action_restart",
+                     "runbook":{  
+                        "description":"",
+                        "main_task_local_reference":{  
+                           "kind":"app_task",
+                           "name":"d359c0ba_dag"
+                        },
+                        "name":"31827abf_runbook",
+                        "task_definition_list":[  
+                           {  
+                              "attrs":{  
+                                 "edges":[  
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[  
+
+                              ],
+                              "description":"",
+                              "name":"d359c0ba_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{  
+                                 "kind":"app_service",
+                                 "name":"Gitlab"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[  
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[  
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {  
+                     "critical":false,
+                     "description":"System action for starting an application",
+                     "name":"action_start",
+                     "runbook":{  
+                        "description":"",
+                        "main_task_local_reference":{  
+                           "kind":"app_task",
+                           "name":"180ecb93_dag"
+                        },
+                        "name":"c83a80f6_runbook",
+                        "task_definition_list":[  
+                           {  
+                              "attrs":{  
+                                 "edges":[  
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[  
+
+                              ],
+                              "description":"",
+                              "name":"180ecb93_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{  
+                                 "kind":"app_service",
+                                 "name":"Gitlab"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[  
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[  
+
+                        ]
+                     },
+                     "type":"system"
+                  },
+                  {  
+                     "critical":false,
+                     "description":"System action for stopping an application",
+                     "name":"action_stop",
+                     "runbook":{  
+                        "description":"",
+                        "main_task_local_reference":{  
+                           "kind":"app_task",
+                           "name":"317e75ff_dag"
+                        },
+                        "name":"df77c3b0_runbook",
+                        "task_definition_list":[  
+                           {  
+                              "attrs":{  
+                                 "edges":[  
+
+                                 ],
+                                 "type":""
+                              },
+                              "child_tasks_local_reference_list":[  
+
+                              ],
+                              "description":"",
+                              "name":"317e75ff_dag",
+                              "retries":"0",
+                              "target_any_local_reference":{  
+                                 "kind":"app_service",
+                                 "name":"Gitlab"
+                              },
+                              "timeout_secs":"0",
+                              "type":"DAG",
+                              "variable_list":[  
+
+                              ]
+                           }
+                        ],
+                        "variable_list":[  
+
+                        ]
+                     },
+                     "type":"system"
+                  }
+               ],
+               "depends_on_list":[  
+
+               ],
+               "description":"",
+               "name":"Gitlab",
+               "port_list":[  
+
+               ],
+               "singleton":false,
+               "tier":"",
+               "variable_list":[  
+
+               ]
+            }
+         ],
+         "substrate_definition_list":[  
+            {  
+               "action_list":[  
+
+               ],
+               "create_spec":{  
+                  "availability_zone_reference":null,
+                  "backup_policy":null,
+                  "categories":{  
+                     "AppFamily":"DevOps",
+                     "AppType":"Git_Server"
+                  },
+                  "cluster_reference":null,
+                  "name":"GitLabMachine-@@{calm_unique}@@",
+                  "resources":{  
+                     "boot_config":{  
+                        "boot_device":{  
+                           "disk_address":{  
+                              "adapter_type":"SCSI",
+                              "device_index":0,
+                              "type":""
+                           },
+                           "type":""
+                        },
+                        "mac_address":"",
+                        "type":""
+                     },
+                     "disk_list":[  
+                        {  
+                           "data_source_reference":{  
+                              "kind":"image",
+                              "name":"acs-centos",
+                              "type":"",
+                              "uuid":"2defcfd4-132a-452c-9143-833751984e18"
+                           },
+                           "device_properties":{  
+                              "device_type":"DISK",
+                              "disk_address":{  
+                                 "adapter_type":"SCSI",
+                                 "device_index":0,
+                                 "type":""
+                              },
+                              "type":""
+                           },
+                           "disk_size_mib":0,
+                           "type":"",
+                           "volume_group_reference":null
+                        }
+                     ],
+                     "gpu_list":[  
+
+                     ],
+                     "guest_customization":{  
+                        "cloud_init":{  
+                           "meta_data":"",
+                           "type":"",
+                           "user_data":"#cloud-config\nusers:\n  - name: centos\n    ssh-authorized-keys:\n      - @@{INSTANCE_PUBLIC_KEY}@@\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']"
+                        },
+                        "sysprep":null,
+                        "type":""
+                     },
+                     "guest_tools":null,
+                     "hardware_clock_timezone":"",
+                     "memory_size_mib":4096,
+                     "nic_list":[  
+                        {  
+                           "ip_endpoint_list":[  
+
+                           ],
+                           "mac_address":"",
+                           "network_function_chain_reference":null,
+                           "network_function_nic_type":"INGRESS",
+                           "nic_type":"NORMAL_NIC",
+                           "subnet_reference":{  
+                              "kind":"subnet",
+                              "name":"",
+                              "type":"",
+                              "uuid":"4aa08188-f780-4b00-87df-b0ebdc96e0a3"
+                           },
+                           "type":""
+                        }
+                     ],
+                     "num_sockets":2,
+                     "num_vcpus_per_socket":1,
+                     "parent_reference":null,
+                     "power_state":"ON",
+                     "serial_port_list":[  
+
+                     ],
+                     "type":""
                   },
                   "type":""
-                },
-                "mac_address":"",
-                "type":""
-              },
-              "disk_list":[
-                {
-                  "data_source_reference":{
-                    "kind":"image",
-                    "name":"acs-centos",
-                    "type":"",
-                    "uuid":"2defcfd4-132a-452c-9143-833751984e18"
-                  },
-                  "device_properties":{
-                    "device_type":"DISK",
-                    "disk_address":{
-                      "adapter_type":"SCSI",
-                      "device_index":0,
-                      "type":""
-                    },
-                    "type":""
-                  },
-                  "disk_size_mib":0,
-                  "type":"",
-                  "volume_group_reference":null
-                }
-              ],
-              "gpu_list":[
+               },
+               "description":"",
+               "editables":{  
+                  "create_spec":{  
+                     "resources":{  
+                        "disk_list":{  
 
-              ],
-              "guest_customization":{
-                "cloud_init":{
-                  "meta_data":"",
-                  "type":"",
-                  "user_data":"#cloud-config\nusers:\n  - name: centos\n    ssh-authorized-keys:\n      - @@{INSTANCE_PUBLIC_KEY}@@\n    sudo: ['ALL=(ALL) NOPASSWD:ALL']"
-                },
-                "sysprep":null,
-                "type":""
-              },
-              "guest_tools":null,
-              "hardware_clock_timezone":"",
-              "memory_size_mib":4096,
-              "nic_list":[
-                {
-                  "ip_endpoint_list":[
+                        },
+                        "nic_list":{  
 
-                  ],
-                  "mac_address":"",
-                  "network_function_chain_reference":null,
-                  "network_function_nic_type":"INGRESS",
-                  "nic_type":"NORMAL_NIC",
-                  "subnet_reference":{
-                    "kind":"subnet",
-                    "name":"",
-                    "type":"",
-                    "uuid":"4aa08188-f780-4b00-87df-b0ebdc96e0a3"
-                  },
-                  "type":""
-                }
-              ],
-              "num_sockets":2,
-              "num_vcpus_per_socket":1,
-              "parent_reference":null,
-              "power_state":"ON",
-              "serial_port_list":[
+                        },
+                        "serial_port_list":{  
 
-              ],
-              "type":""
-            },
-            "type":""
-          },
-          "description":"",
-          "editables":{
-            "create_spec":{
-              "resources":{
-                "disk_list":{
+                        }
+                     }
+                  }
+               },
+               "name":"VM_GITLAB",
+               "os_type":"Linux",
+               "readiness_probe":{  
+                  "address":"@@{platform.status.resources.nic_list[0].ip_endpoint_list[0].ip}@@",
+                  "connection_port":22,
+                  "connection_type":"SSH",
+                  "delay_secs":"60",
+                  "disable_readiness_probe":false
+               },
+               "type":"AHV_VM",
+               "variable_list":[  
 
-                },
-                "nic_list":{
-
-                },
-                "serial_port_list":{
-
-                }
-              }
+               ]
             }
-          },
-          "name":"VM_GITLAB",
-          "os_type":"Linux",
-          "readiness_probe":{
-            "address":"@@{platform.status.resources.nic_list[0].ip_endpoint_list[0].ip}@@",
-            "connection_port":22,
-            "connection_type":"SSH",
-            "delay_secs":"60",
-            "disable_readiness_probe":false
-          },
-          "type":"AHV_VM",
-          "variable_list":[
+         ],
+         "type":"USER"
+      }
+   },
+   "status":{  
 
-          ]
-        }
-      ],
-      "type":"USER"
-    }
-  },
-  "status":{
-
-  }
+   }
 }
